@@ -5,16 +5,17 @@ import logging
 import numpy as np
 from .embeddings import embed_text  # embedding_cache 제거
 import re
+
 # 후속 질문 패턴 정의
 FOLLOW_UP_PATTERNS = [
     "다시", "아니", "그럼", "추가로", "또", "그리고",
-    "근데", "그니까", "그래서", "아 맞다", "아, 그럼", "아 그리고", "그렇다면"
+    "근데", "그니까", "그래서", "아 맞다", "아, 그럼", "아 그리고", "그렇다면", "더",
+    "더 구체적으로", "구체적으로",
     # 필요한 만큼 추가...
 ]
 
 
 
-#제외할 키워드
 #제외할 키워드
 EXCLUDE_KEYWORDS = [
     "알려줘", "안내", "정보", "질문", "도와줘", "알려주세요", "언제야", "어디야",

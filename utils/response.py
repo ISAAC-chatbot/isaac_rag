@@ -37,7 +37,7 @@ def generate_response_with_context(client: OpenAI, query: str, context: List[dic
         - "수강 철회는 학사 포털에서 지정된 기간 동안만 가능해요. 보통 개강 후 5~6주차가 수강 철회 기간이에요."
         - "추가 정보가 필요하시면 학사지원팀에 문의해 보세요. 전화번호는 02-2123-2090, 2091, 2096, 2097입니다."
 
-       Only if the query is unrelated to the university, respond with "대학교와 관련 없는 질문은 답변해드릴 수 없습니다."
+       Only if the query is *highly unrelated* to the university, respond with "매우 관련 없는 질문은 답변해드릴 수 없습니다."
        If no source URL is available, add '출처 : https://www.yonsei.ac.kr/sc/support/notice.jsp' at the end with the note '추가 정보가 없어요. 해당 페이지를 참고해 주세요.' Otherwise, include the provided source URL only at the end of all responses, as '출처 : [url]'.
        Respond in {language}.
         """

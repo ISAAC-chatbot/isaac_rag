@@ -1,5 +1,4 @@
 # utils/data_loader.py
-
 import os
 import json
 import faiss

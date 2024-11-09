@@ -1,0 +1,237 @@
+2024-11-09 01:47:07,388:INFO:로깅 시스템 초기화 완료.
+2024-11-09 01:47:07,393:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2024-11-09 01:47:07,395:INFO:FAISS 인덱스를 파일에서 불러왔습니다.
+2024-11-09 01:47:07,447:INFO:메타데이터를 파일에서 불러왔습니다.
+2024-11-09 01:47:08,316:INFO:BM25 인덱스를 파일에서 불러왔습니다.
+2024-11-09 01:47:08,489:INFO:HTTP Request: GET http://localhost:7860/startup-events "HTTP/1.1 200 OK"
+2024-11-09 01:47:08,539:INFO:HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 01:47:08,754:INFO:HTTP Request: GET https://checkip.amazonaws.com/ "HTTP/1.1 200 "
+2024-11-09 01:47:09,033:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 01:47:09,163:INFO:HTTP Request: GET https://api.gradio.app/v2/tunnel-request "HTTP/1.1 200 OK"
+2024-11-09 13:30:55,722:INFO:로깅 시스템 초기화 완료.
+2024-11-09 13:30:55,730:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2024-11-09 13:30:55,733:INFO:FAISS 인덱스를 파일에서 불러왔습니다.
+2024-11-09 13:30:55,817:INFO:메타데이터를 파일에서 불러왔습니다.
+2024-11-09 13:30:56,627:INFO:BM25 인덱스를 파일에서 불러왔습니다.
+2024-11-09 13:30:56,791:INFO:HTTP Request: GET http://localhost:7860/startup-events "HTTP/1.1 200 OK"
+2024-11-09 13:30:56,804:INFO:HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 13:30:56,933:INFO:HTTP Request: GET https://checkip.amazonaws.com/ "HTTP/1.1 200 "
+2024-11-09 13:30:57,032:INFO:HTTP Request: GET https://checkip.amazonaws.com/ "HTTP/1.1 200 "
+2024-11-09 13:30:57,246:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 13:31:09,985:INFO:새로운 쿼리 수신: 신촌캠퍼스 셔틀버스 운행 시간 알려줘.
+2024-11-09 13:31:09,985:INFO:initializing identifier
+2024-11-09 13:31:11,032:INFO:감지된 언어: ko
+2024-11-09 13:31:11,032:INFO:언어 감지 완료: ko (시간: 1.047605초)
+2024-11-09 13:31:11,032:ERROR:알 수 없는 검색 방법: ISAAC 2.0-turbo : 하이브리드형 검색
+2024-11-09 13:31:14,344:INFO:새로운 쿼리 수신: 1대 총장님 성함이 뭐야?
+2024-11-09 13:31:14,355:INFO:감지된 언어: ko
+2024-11-09 13:31:14,355:INFO:언어 감지 완료: ko (시간: 0.010516초)
+2024-11-09 13:31:14,355:ERROR:알 수 없는 검색 방법: ISAAC 2.0-turbo : 하이브리드형 검색
+2024-11-09 13:36:24,512:INFO:로깅 시스템 초기화 완료.
+2024-11-09 13:36:24,519:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2024-11-09 13:36:24,523:INFO:FAISS 인덱스를 파일에서 불러왔습니다.
+2024-11-09 13:36:24,612:INFO:메타데이터를 파일에서 불러왔습니다.
+2024-11-09 13:36:25,136:INFO:BM25 인덱스를 파일에서 불러왔습니다.
+2024-11-09 13:36:25,292:INFO:HTTP Request: GET http://localhost:7860/startup-events "HTTP/1.1 200 OK"
+2024-11-09 13:36:25,306:INFO:HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 13:36:25,540:INFO:HTTP Request: GET https://checkip.amazonaws.com/ "HTTP/1.1 200 "
+2024-11-09 13:36:25,547:INFO:HTTP Request: GET https://checkip.amazonaws.com/ "HTTP/1.1 200 "
+2024-11-09 13:36:25,738:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 13:36:30,854:INFO:새로운 쿼리 수신: 신촌캠퍼스 셔틀버스 운행 시간 알려줘.
+2024-11-09 13:36:30,854:INFO:initializing identifier
+2024-11-09 13:36:31,888:INFO:감지된 언어: ko
+2024-11-09 13:36:31,888:INFO:언어 감지 완료: ko (시간: 1.033403초)
+2024-11-09 13:36:31,888:INFO:FAISS 검색 함수 호출
+2024-11-09 13:36:32,738:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:32,744:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:32,744:INFO:쿼리 임베딩 생성 시간: 0.856318초
+2024-11-09 13:36:32,752:INFO:FAISS 검색 시간: 0.007434초
+2024-11-09 13:36:32,752:INFO:FAISS 검색 시간: 0.864327초
+2024-11-09 13:36:32,752:INFO:FAISS 검색 결과를 사용하여 응답을 생성합니다.
+2024-11-09 13:36:32,752:INFO:응답 생성 및 포맷팅 시간: 0.000011초
+2024-11-09 13:36:32,752:INFO:전체 쿼리 처리 시간: 1.898167초
+2024-11-09 13:36:32,752:INFO:컨텍스트 텍스트 생성 시작.
+2024-11-09 13:36:32,753:INFO:추가된 문서: URL: https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=237651&board_wrapper=%2Fsc%...
+2024-11-09 13:36:32,753:INFO:추가된 문서: URL: https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=235036&board_wrapper=%2Fsc%...
+2024-11-09 13:36:32,753:INFO:문서 길이 : 13489
+2024-11-09 13:36:32,753:INFO:문서 https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=237652&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=20&board_no=15 일부를 잘라서 추가했습니다.
+2024-11-09 13:36:32,753:INFO:컨텍스트 텍스트 생성 완료.
+2024-11-09 13:36:32,753:INFO:생성된 컨텍스트 텍스트 길이: 10000
+2024-11-09 13:36:32,753:INFO:생성된 컨텍스트 텍스트 내용: URL: https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=237651&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=20&board_no=15
+Text: -  2024학년도 2학기 신촌캠퍼스 셔틀버스 운행 시간표 2024.08.27 - 2024학년도 2학기 신촌캠퍼스 셔틀버스 운행 시간표 ◆ 2016년 12월 5일부터 오전 노선의 경복궁역 출발시간을 특정하지 않습니다. 경복궁역에서 5분 이상 주‧정차 시 과태료가 부과됨에 따라, 승‧하차 후 바로 출발하오니 이용에 착오 없으시길 바랍니다. 또한, 운행 기간 중 긴급 상황 (악천후 및 사고, 집회 등) 발생 시 운행 시간, 운행 횟수 등이 변경될 수 있습니다. ◆ 기간 : 2024. 9. 2.(월) ~ 2024. 12. 20.(금) ※ 추후 운행시간 및 일정 변경 가능노선 시간 교통광장(백양누리) → 경영관 →...
+2024-11-09 13:36:32,753:INFO:컨텍스트 텍스트 생성 시간: 0.000613초
+2024-11-09 13:36:32,753:INFO:LLM에 전달되는 메시지: [
+  {
+    "role": "system",
+    "content": "You are a friendly and knowledgeable university chatbot. Respond in a professional yet approachable manner, using polite '~요' endings, similar to the tone in the following examples:\n\n        - \"수강 변경 기간이 끝난 후에는 추가로 수강 신청이 어려워요. 데이터 처리 작업이 진행되기 때문이에요.\"\n        - \"수강 철회는 학사 포털에서 지정된 기간 동안만 가능해요. 보통 개강 후 5~6주차가 수강 철회 기간이에요.\"\n        - \"추가 정보가 필요하시면 학사지원팀에 문의해 보세요. 전화번호는 02-2123-2090, 2091, 2096, 2097입니다.\"\n\n       Only if the query is *highly unrelated* to the university, respond with \"매우 관련 없는 질문은 답변해드릴 수 없습니다.\"\n       If no source URL is available, add '출처 : https://www.yonsei.ac.kr/sc/support/notice.jsp' at the end with the note '추가 정보가 없어요. 해당 페이지를 참고해 주세요.' Otherwise, include the provided source URL only at the end of all responses, as '출처 : [url]'.\n       Respond in ko.\n        "
+  },
+  {
+    "role": "user",
+    "content": "Here is some background information with the source URLs provided:\n\nURL: https://www.yonsei.ac.kr/s...
+2024-11-09 13:36:33,794:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-09 13:36:33,795:INFO:OpenAI API 호출 시간: 1.041841초
+2024-11-09 13:36:47,541:INFO:새로운 쿼리 수신: 1대 총장님 성함이 뭐야?
+2024-11-09 13:36:47,551:INFO:감지된 언어: ko
+2024-11-09 13:36:47,552:INFO:언어 감지 완료: ko (시간: 0.010286초)
+2024-11-09 13:36:47,552:INFO:BM25 + FAISS 검색 함수 호출
+2024-11-09 13:36:47,552:INFO:BM25 검색 함수 호출
+2024-11-09 13:36:49,618:INFO:쿼리 토큰화 시간: 2.065716초
+2024-11-09 13:36:49,624:INFO:BM25 점수 계산 시간: 0.005624초
+2024-11-09 13:36:49,624:INFO:BM25 상위 인덱스 정렬 시간: 0.000156초
+2024-11-09 13:36:49,624:INFO:BM25 총 검색 시간: 2.072046초
+2024-11-09 13:36:50,257:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:50,328:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:50,997:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:51,000:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:51,919:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:51,922:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:51,922:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:36:52,760:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:52,763:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:52,763:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:36:53,247:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:53,250:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:53,868:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:53,870:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:54,580:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:54,583:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:55,400:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:55,403:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:55,403:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:36:55,912:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:55,914:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:55,915:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:36:56,629:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:56,631:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:56,631:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:36:57,265:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:57,268:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:58,308:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:58,311:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:58,311:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:36:58,909:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:58,935:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:58,936:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:36:59,291:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:59,294:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:36:59,701:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:36:59,704:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:00,010:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:00,013:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:00,622:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:00,624:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:00,624:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:37:01,236:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:01,239:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:01,758:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:01,761:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:02,158:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:02,160:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:02,568:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:02,571:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:02,978:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:02,981:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:03,489:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:03,492:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:04,309:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:04,311:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:04,311:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:37:05,026:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:05,028:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:05,028:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:37:05,742:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:05,746:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:06,218:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:06,221:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:07,388:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:07,390:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:07,852:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:07,854:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:07,854:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:37:08,254:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:08,257:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:08,697:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:08,699:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:09,043:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:09,045:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:09,415:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:09,418:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:09,940:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:09,943:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:10,379:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:10,381:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:10,947:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:10,948:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:11,575:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:11,577:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:11,857:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:11,860:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:12,176:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:12,178:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:12,648:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:12,651:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:12,651:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:37:13,176:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:13,283:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:13,784:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:13,785:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:14,260:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:14,261:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:14,699:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:14,701:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:15,266:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:15,269:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:15,676:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:15,678:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:15,678:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:37:15,983:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:15,985:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:16,397:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:16,399:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:17,211:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:17,213:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:17,214:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:37:17,723:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:17,725:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:18,337:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:18,340:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:19,055:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:19,058:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:19,058:INFO:임베딩 캐시에서 로드됨.
+2024-11-09 13:37:19,525:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:19,526:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:19,887:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:19,889:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:20,403:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:20,404:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:20,898:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:20,901:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:21,613:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:21,614:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:22,125:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:22,126:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:22,651:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:22,652:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:23,150:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:23,152:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:23,615:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:23,617:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:24,018:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:24,019:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:24,467:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:24,470:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:24,765:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:24,766:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:25,192:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:25,195:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:25,575:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:25,577:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:26,136:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:26,138:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:26,804:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:26,807:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:27,451:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2024-11-09 13:37:27,454:INFO:임베딩 생성 및 캐시됨.
+2024-11-09 13:37:28,372:INFO:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"
+2024-11-09 13:37:28,374:ERROR:BM25 + FAISS 검색 실패: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 22509 tokens (22509 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-09 13:37:28,374:ERROR:오류가 발생했습니다: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 22509 tokens (22509 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}

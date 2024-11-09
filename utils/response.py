@@ -48,9 +48,6 @@ def generate_response_with_context(client: OpenAI, query: str, context: List[dic
     }
 ]
 
-
-
-
     # 메시지 구조 로깅
     logging.info(f"LLM에 전달되는 메시지: {json.dumps(messages, ensure_ascii=False, indent=2)[:1000]}...")  # 너무 길 경우 일부만 로깅
 
@@ -131,7 +128,7 @@ def chat_placeholder(client: OpenAI, index: faiss.Index, metadata: Dict, id_to_u
 
         context = []
         timings = {}
-        if search_method == 'faiss':
+        if search_method == 'ISAAC 2.0 - 정확하고 자세한 정보검색':
             # FAISS만 사용
             faiss_start = time.perf_counter()
             faiss_result = search_faiss(client, index, metadata, id_to_url, query, top_k=top_k_faiss)
@@ -141,7 +138,7 @@ def chat_placeholder(client: OpenAI, index: faiss.Index, metadata: Dict, id_to_u
             logging.info(f"FAISS 검색 시간: {faiss_time:.6f}초")
             context = [result["metadata"] for result in faiss_result["results"]]
             logging.info("FAISS 검색 결과를 사용하여 응답을 생성합니다.")
-        elif search_method == 'bm25+faiss':
+        elif search_method == 'ISAAC 2.0-turbo : 하이브리드형 검색':
             # BM25 + FAISS 사용
             bm25_faiss_start = time.perf_counter()
             bm25_faiss_result = search_bm25_faiss(client, bm25, metadata, id_to_url, tokenizer, query, bm25_top_k=bm25_top_k, faiss_top_k=faiss_top_k)
@@ -151,7 +148,7 @@ def chat_placeholder(client: OpenAI, index: faiss.Index, metadata: Dict, id_to_u
             logging.info(f"BM25 + FAISS 검색 시간: {bm25_faiss_time:.6f}초")
             context = [result["metadata"] for result in bm25_faiss_result["results"]]
             logging.info("BM25 + FAISS 검색 결과를 사용하여 응답을 생성합니다.")
-        elif search_method == 'bm25':
+        elif search_method == 'ISAAC Lite : 가볍고 빠른 검색':
             # BM25만 사용
             bm25_start = time.perf_counter()
             bm25_result = search_bm25(bm25, metadata, id_to_url, tokenizer, query, top_k=5)

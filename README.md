@@ -20,4 +20,6 @@ Backend
 
 
 해야하는일 
-1. ISAAC 2.0-turbo 고도화 
+1. ISAAC 2.0-turbo 고도화
+2. RAG의 결과의 신뢰도 평가 : AI로 
+3. 출처 : (여기) -> 디자인 변경 

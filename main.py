@@ -16,7 +16,12 @@ import os
 import re
 import html
 
+from dotenv import load_dotenv
+# .env 파일을 로드합니다
+load_dotenv('/home/ubuntu/multiturn/.env')
+
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+print(OPENAI_API_KEY)
 
 # 세션별 ConversationManager 저장
 session_managers = {}
@@ -63,6 +68,21 @@ def main():
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
+
+    // Gradio 푸터 숨기기 (MutationObserver 사용)
+    const observer = new MutationObserver((mutations) => {
+        const footer = document.querySelector('footer.svelte-sar7eh');
+        if (footer) {
+            footer.style.display = 'none';
+            observer.disconnect(); // 푸터를 찾아서 숨기면 관찰 중단
+        }
+    });
+
+    // body 요소의 변경 감시 시작
+    observer.observe(document.body, {
+        childList: true, // 자식 요소 추가/제거 감시
+        subtree: true    // 하위 요소들도 감시
+    });
 
     // 기본 동의 설정 (모든 스토리지 거부)
     gtag('consent', 'default', {
@@ -145,7 +165,7 @@ def main():
     // 초기화 시 세션 ID 확인
     function initializeSession() {
         const userId = localStorage.getItem('session_id') || generateUserId();
-        console.log('Session initialized with ID:', userId);
+        console.debug('Session initialized with ID:', userId);
         return userId;
     }
 
@@ -205,7 +225,7 @@ def main():
 
     // 콘솔 로그 함수 수정
     function logChatMetrics() {
-        console.log('Chat Metrics:', {
+        console.debug('Chat Metrics:', {
             sessionStartTime: window.chatMetrics.sessionStartTime,
             messageCount: window.chatMetrics.messageCount,
             methodChangeCount: window.chatMetrics.methodChangeCount,
@@ -233,9 +253,9 @@ def main():
             };
 
             gtag('event', eventName, cleanParams);
-            console.log(`[GA Event Sent] ${eventName}:`, cleanParams);
+            console.debug(`[GA Event Sent] ${eventName}:`, cleanParams);
         } catch (error) {
-            console.log(`[GA Event Error] ${eventName}:`, error);
+            console.debug(`[GA Event Error] ${eventName}:`, error);
         }
     }
 
@@ -344,6 +364,8 @@ def main():
                 // 좋아요 버튼 클릭 시
                 const dislikeButton = e.target.closest('.feedback-buttons').querySelector('.dislike');
                 e.target.classList.add('clicked');
+                e.target.disabled = true;
+                e.target.style.cursor = 'not-allowed';
                 dislikeButton.disabled = true;
                 dislikeButton.style.opacity = '0.5';
                 dislikeButton.style.cursor = 'not-allowed';
@@ -356,6 +378,8 @@ def main():
                 // 싫어요 버튼 클릭 시
                 const likeButton = e.target.closest('.feedback-buttons').querySelector('.like');
                 e.target.classList.add('clicked');
+                e.target.disabled = true;
+                e.target.style.cursor = 'not-allowed';
                 likeButton.disabled = true;
                 likeButton.style.opacity = '0.5';
                 likeButton.style.cursor = 'not-allowed';
@@ -1021,12 +1045,13 @@ h1, h2, h3, #info-link {
         
         # 예제 질문들
         examples = [
-            "2025-1학기 등록금 납부 기한",
+            "2025-1 학부 등록금 납부 일정",
             "2025-1학기 추가등록 언제야?",
             "2025-1학기 수강신청 일정",
             "2025-1학기 S/U 제도에 대해 알려줘",
             "2025-1학기 수강과목 철회 중간고사 이전이야?",
-            "마일리지 총량에 대해서 과별로 정리해줘"
+            "마일리지 총량에 대해서 과별로 정리해줘",
+            "2025-1 송도학사 입사 일정"
         ]
 
         def set_example(example):
@@ -1053,7 +1078,7 @@ h1, h2, h3, #info-link {
 
 if __name__ == "__main__":
     demo = main()
-    demo.launch(server_name="0.0.0.0", server_port=7860, share=True,
+    demo.launch(server_name="0.0.0.0", server_port=8088, share=True,
         show_error=True,  # 에러 상세 표시
         show_api=False,   # API 엔드포인트 비활성화
         favicon_path=None # 기본 파비콘 사용)

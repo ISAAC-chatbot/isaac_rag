@@ -181,8 +181,9 @@ class ConversationManager:
                 c. A topic shift  
                 d. A new topic.  
         3. **Temporal Context Rules**  
-            - Default to "2024-2" (Fall semester) for schedule-related queries unless explicitly stated otherwise.  
-            - Use explicitly mentioned semesters (e.g., "2025-1").  
+            - Default to "2025-1" for schedule-related queries unless explicitly stated otherwise (like 기한, 마감, 입사 등).
+            - Use explicitly mentioned semesters (e.g., "2024-2").
+            - Unless explicitly stated otherwise, such as mentioning '대학원', treat queries as referring to '학부' or '학부대학' by default.
             - If unrelated to schedules, omit temporal context unless explicitly required.  
 
         ### TOPIC ANALYSIS:
@@ -225,7 +226,7 @@ class ConversationManager:
         1. **Follow-Up Query**
         Previous: "컴퓨터과학과 복수전공 졸업요건?"
         Current: "경영학과는?"
-        → REWRITTEN: "경영학과 복수전공 졸업요건"
+        → REWRITTEN: "경영학과 학부 복수전공 졸업요건"
         → EXPECTED_DOC: {...}
         → TOPICS: ["경영대학"]
 
@@ -239,21 +240,21 @@ class ConversationManager:
         3. **Implicit Temporal Context**
         Previous: "수강신청 언제야?"
         Current: "정정은?"
-        → REWRITTEN: "2024-2 수강신청 정정기간"
+        → REWRITTEN: "2025-1 학부 수강신청 정정기간"
         → EXPECTED_DOC: {...}
         → TOPICS: ["연세대전반"]
 
         4. **Explicit Temporal Reference**
         Previous: "2024-2 교환학생 신청 기간 알려줘."
         Current: "2025-1도 같은 기간이야?"
-        → REWRITTEN: "2025-1 교환학생 신청 기간"
+        → REWRITTEN: "2025-1 학부 교환학생 신청 기간"
         → EXPECTED_DOC: {...}
         → TOPICS: ["국제처", "연세대전반"]
 
         5. **SCHEDULE-RELATED QUERY WITH EXPLICIT TEMPORAL SHIFT**  
         Previous: "이번학기 등록금 언제까지야?"  
         Current: "다음 학기는?"  
-        → REWRITE: "2025-1 등록금 납부 기간"   
+        → REWRITE: "2025-1 학부 등록금 납부 기간"   
         → EXPECTED_DOC: {...}
         → TOPICS: ["연세대전반"] 
 
@@ -458,7 +459,7 @@ class ConversationManager:
             # logging.info(f"추가된 문서: {doc_text}...\n")
         self.logger.info("컨텍스트 텍스트 생성 완료.")
         # logging.info(f"생성된 컨텍스트 텍스트 길이: {len(context_text)}")
-        logging.info(f"생성된 컨텍스트 텍스트 내용: {context_text}...\n")
+        self.logger.info(f"생성된 컨텍스트 텍스트 내용: {context_text}...\n")
         return {
                 **state,
                 "context": context_text

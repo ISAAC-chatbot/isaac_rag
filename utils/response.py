@@ -135,6 +135,7 @@ def generate_response(
             Rewritten query for context: {rewritten_query}
 
             - Respond in {language} and date as {language} personal format (e.g. if korean, 02 FEB -> 2월).
+            - If the query is about '학부' or '학부대학', default to '학부' or '학부대학' by default.
         """}
         ]
         
@@ -157,6 +158,8 @@ def generate_response(
                 frequency_penalty=0.2, 
                 presence_penalty=0.1
             )
+
+            print(response)
             
             api_end = time.perf_counter()
             api_time = api_end - api_start

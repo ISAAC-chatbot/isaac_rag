@@ -6,3 +6,5 @@ logs/
 
 # Queries 디렉토리 무시
 queries/
+
+utils/__pycache__/

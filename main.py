@@ -6,7 +6,8 @@ from utils.logging_utils import (
     initialize_query_logging, 
     log_query,
     get_logger_for_user)
-
+from fastapi import FastAPI
+from gradio import mount_gradio_app
 from utils.data_loader import initialize_openai_client
 from utils.response import (generate_response, detect_language)
 from utils.conversation import ConversationManager
@@ -28,6 +29,8 @@ load_dotenv('./.env')
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 print(OPENAI_API_KEY)
+
+app = FastAPI()
 
 # 세션별 ConversationManager 저장
 session_managers = {}
@@ -345,10 +348,16 @@ def main():
     return demo
 
 if __name__ == "__main__":
-    demo = main()
-    demo.launch(server_name="0.0.0.0", server_port=8088, share=True,
-        show_error=True,  # 에러 상세 표시
-        show_api=False,   # API 엔드포인트 비활성화
-        favicon_path=None # 기본 파비콘 사용)
-    )
+    # demo = main()
+    # demo.launch(server_name="0.0.0.0", server_port=8088, share=True,
+    #     show_error=True,  # 에러 상세 표시
+    #     show_api=False,   # API 엔드포인트 비활성화
+    #     favicon_path=None # 기본 파비콘 사용)
+    # )
+
+    gradio_app = main()
+    app = mount_gradio_app(app, gradio_app, path="/")
+
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8088)
     

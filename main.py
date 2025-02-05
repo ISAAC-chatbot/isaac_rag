@@ -1,59 +1,35 @@
 import gradio as gr
 import hashlib
 from utils.logging_utils import (
-    initialize_logging, 
-    # initialize_search_time_file, 
-    initialize_query_logging, 
     log_query,
     get_logger_for_user)
 from fastapi import FastAPI
 from gradio import mount_gradio_app
-from utils.data_loader import initialize_openai_client
+from utils.data_loader import initialize_client
 from utils.response import (generate_response, detect_language)
 from utils.conversation import ConversationManager
+
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), 'utils'))
 from custom_js_content import custom_js
 from custom_css_content import custom_css
+from api import router
 
 import logging
-import uuid
-import os
 import re
 import html
 
-from dotenv import load_dotenv
-# .env 파일을 로드합니다
-load_dotenv('./.env')
-
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-print(OPENAI_API_KEY)
 
 app = FastAPI()
 
 # 세션별 ConversationManager 저장
 session_managers = {}
 
+
 def main():
-    # 초기화 함수 호출
-    initialize_logging(log_file='logs/ai_global.log')
-    # initialize_search_time_file()
-    initialize_query_logging()
-
-    # OpenAI 클라이언트 초기화
-    try:
-        if not OPENAI_API_KEY:
-            raise ValueError("OpenAI API 키가 설정되지 않았습니다. 환경 변수 'OPENAI_API_KEY'를 설정해주세요.")
-
-        if not OPENAI_API_KEY.startswith('sk-'):
-            raise ValueError("잘못된 API 키 형식입니다. OpenAI API 키는 'sk-'로 시작해야 합니다.")
-
-        client = initialize_openai_client(api_key=OPENAI_API_KEY)
-
-    except Exception as e:
-        logging.error(f"OpenAI 클라이언트 초기화 실패: {str(e)}")
-        raise
+    
+    client = initialize_client()
 
     # FAISS 인덱스 및 메타데이터 로드
     # index, metadata = load_faiss_index()
@@ -355,6 +331,11 @@ if __name__ == "__main__":
     #     favicon_path=None # 기본 파비콘 사용)
     # )
 
+    # API 모듈 포함 (Gradio와 동일한 포트에서 실행)
+    
+    app.include_router(router, prefix="/api")
+    
+    # Gradio 앱 실행
     gradio_app = main()
     app = mount_gradio_app(app, gradio_app, path="/")
 

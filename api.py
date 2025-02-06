@@ -58,7 +58,7 @@ class ChatRequest(BaseModel):
     histories : List[HistoryRequest]
     message: str
     search_method: str
-    user_id : int
+    user_id : str
 
 class ChatResponse(BaseModel):
     source: bool  # URL 또는 출처 정보가 포함되었는지 여부
@@ -78,7 +78,7 @@ def chat(
 
     user_message = request.message
     search_method_selection = request.search_method
-    user_id = str(request.user_id)
+    user_id = request.user_id
     histories = request.histories
 
     def response_generator() -> Generator[str,None, None]:

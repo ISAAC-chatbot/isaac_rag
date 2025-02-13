@@ -79,7 +79,9 @@ def chat(
     user_message = request.message
     search_method_selection = request.search_method
     user_id = request.user_id
-    histories = request.histories
+    # Pydantic 객체 리스트를 딕셔너리 리스트로 변환
+    histories = [history.model_dump() if isinstance(history, BaseModel) else history for history in request.histories]
+
 
     def response_generator() -> Generator[str,None, None]:
         logger = get_logger_for_user(user_id) or logging.getLogger()

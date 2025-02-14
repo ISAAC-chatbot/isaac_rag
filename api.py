@@ -11,12 +11,13 @@ from utils.data_loader import initialize_client
 import logging
 import re
 import html
-from typing import List, Generator
+from typing import List, Generator, Optional, Union
 import json
-import aiohttp
+import requests
 import os
 from dotenv import load_dotenv
-
+from enum import Enum
+from datetime import datetime
 # .env 파일 로드
 load_dotenv()
 
@@ -25,15 +26,26 @@ BACKEND_SERVER = os.getenv("BACKEND_SERVER")  # 기본값 설정 가능
 
 router = APIRouter()
 
-async def update_history(token: str, question: str, answer: str, source: str):
-
+def update_history(token: str, chat_room_id: Optional[int], question: str, answer: str, source: str):
     try:
-        async with aiohttp.ClientSession() as session:
-            await session.post(
-                f"{BACKEND_SERVER}/api/v1/chat/histories",
-                json={"question": question, "answer": answer, "sourceURL": source},
-                headers={"Authorization": f"Bearer {token}"}
-            )
+        payload = {
+            "question": question,
+            "answer": answer,
+            "sourceURL": source
+        }
+
+        # ✅ chat_room_id가 None이 아닐 때만 추가
+        if chat_room_id is not None:
+            payload["chatRoomId"] = chat_room_id
+
+        response = requests.post(
+            f"{BACKEND_SERVER}/api/v1/chat/messages",
+            json=payload,
+            headers={"Authorization": f"Bearer {token}"}
+        )
+
+        return response.json()  # 응답 반환
+
     except Exception as e:
         print(f"History 저장 중 오류 발생: {str(e)}")
 
@@ -50,26 +62,71 @@ def get_bearer_token(Authorization: str = Header(None)) -> str:
 
     return token_match.group(1)
 
+class ResponseType(str, Enum):
+    MESSAGE = "MESSAGE"
+    URL = "URL"
+    CHAT_ROOM_INFO = "CHAT_ROOM_INFO"
+
 class HistoryRequest(BaseModel):
     original_query: str
     response: str
 
 class ChatRequest(BaseModel):
     histories : List[HistoryRequest]
+    chat_room_id: Optional[int] = None
     message: str
     search_method: str
     user_id : str
 
 class ChatResponse(BaseModel):
-    source: bool  # URL 또는 출처 정보가 포함되었는지 여부
-    text: str    # 실제 텍스트 또는 URL
-    last: bool    # 마지막 청크인지 여부
+    type: ResponseType
+    text: str
 
-@router.post("/chat", response_model=ChatResponse, responses={200: {"content": {"application/json": {"example": {"source": False, "text": "url 또는 청크단위의 텍스트", "last": False}}}}})
+class ChatRoomResponse(BaseModel):
+    type: ResponseType
+    id : int
+    title : str
+    createdAt : datetime
+
+@router.post(
+    "/chat",
+    response_model=Union[ChatResponse, ChatRoomResponse],  
+    responses={
+        200: {
+            "content": {
+                "application/json": {
+                    "examples": {
+                        "chat_response_message": {
+                            "summary": "채팅 메시지 응답",
+                            "value": {
+                                "type": "MESSAGE",
+                                "text": "청크 단위의 텍스트"
+                            }
+                        },
+                        "chat_response_url": {
+                            "summary": "출처 사이트 응답",
+                            "value": {
+                                "type": "URL",
+                                "text": "https://www.yonsei.ac.kr/sc/support/calendar.jsp?cYear=2025&amp;hakGi=1"
+                            }
+                        },
+                        "chatroom_response": {
+                            "summary": "채팅방 정보 응답",
+                            "value": {
+                                "type": "CHAT_ROOM_INFO",
+                                "id": 1,
+                                "title": "채팅방 제목",
+                                "createdAt": "2025-02-14T12:00:00"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+)
 def chat(
     request: ChatRequest, 
-    fastapi_request: Request, 
-    background_tasks: BackgroundTasks, 
     token: str = Depends(get_bearer_token)):
 
     session_managers = {}
@@ -79,6 +136,7 @@ def chat(
     user_message = request.message
     search_method_selection = request.search_method
     user_id = request.user_id
+
     # Pydantic 객체 리스트를 딕셔너리 리스트로 변환
     histories = [history.model_dump() if isinstance(history, BaseModel) else history for history in request.histories]
 
@@ -146,10 +204,11 @@ def chat(
             buffer = ""
             url_pattern = re.compile(r"https?://[\w\-._~:/?#\[\]@!$&'()*+,;=%]+")
 
+
             for chunk in bot_message_generator:
                 buffer += chunk
 
-                if chunk == "출" :
+                if chunk == "출":
                     first_flag = True
                     continue
 
@@ -171,23 +230,20 @@ def chat(
                     first_flag = False
                     second_flag = False
 
-                # Check for "출처:" or "출처 :"
                 if "출처:" in buffer or "출처 :" in buffer:
-                    is_source_section = True  # Start collecting URL
-                    buffer = ""  # Clear buffer after detecting "출처"
+                    is_source_section = True
+                    buffer = ""
                     continue
 
                 if is_source_section:
-                    # Collect URL content after "출처:"
-                    url_message += chunk.strip()  # Add chunk to URL and strip whitespace
+                    url_message += chunk.strip()
                     continue
 
-                # If not in the "출처:" section, add chunk to the response
-                if (not first_flag) and (not second_flag) and (not is_source_section):
+                if not first_flag and not second_flag and not is_source_section:
                     bot_message += chunk
 
-                # Update history and yield response
-                data = ChatResponse(source=False, text=chunk, last=False)
+
+                data = ChatResponse(type=ResponseType.MESSAGE, text=chunk)
                 yield json.dumps(data.model_dump()) + "\n"
           
 
@@ -215,17 +271,36 @@ def chat(
             clean_url = html.unescape(clean_url)
             clean_url_escape = html.escape(clean_url)
             
-            data = ChatResponse(source=True, text=clean_url_escape, last=True)
+            data = ChatResponse(type=ResponseType.URL, text=clean_url_escape, last=True)
             yield json.dumps(data.model_dump()) + "\n"
-            # api에서는 이벤트 리스너 발생
+            
+            history_response = update_history(token, request.chat_room_id, user_message, bot_message, clean_url_escape)
+            
+            # JSON 응답을 dict로 변환 후 'last': True 추가
+            if isinstance(history_response, dict):  
+                history_response["type"] = ResponseType.CHAT_ROOM_INFO
+            else:
+                history_response = {"type" : ResponseType.CHAT_ROOM_INFO, "response": history_response}  # 응답이 dict가 아닐 경우 기본 구조 생성
+
+            history_response_data = json.dumps(history_response)
+            yield history_response_data + "\n"
 
         else:
-            # 요약 등 다른 처리가 필요한 경우
             bot_response = final_state.get("response", "죄송합니다. 응답을 생성할 수 없습니다.")
             clean_url_escape= ""            
-            data = ChatResponse(source=False, text=bot_response, last=True)
+            data = ChatResponse(type=ResponseType.MESSAGE, text=bot_response, last=True)
             yield json.dumps(data.model_dump()) + "\n"
-        
+            
+            history_response = update_history(token, request.chat_room_id, user_message, bot_response, clean_url_escape)
+            # JSON 응답을 dict로 변환 후 'last': True 추가
+            if isinstance(history_response, dict):
+                history_response["type"] = ResponseType.MESSAGE  
+            else:
+                history_response = {"type" : ResponseType.CHAT_ROOM_INFO, "response": history_response}  # 응답이 dict가 아닐 경우 기본 구조 생성
+
+            history_response_data = json.dumps(history_response)
+            yield history_response_data + "\n"
+
         # 비동기 이벤트 리스너
-        background_tasks.add_task(update_history, token, user_message, bot_message, clean_url_escape)
+        # background_tasks.add_task(update_history, token, request.chat_room_id, user_message, bot_message, clean_url_escape)
     return StreamingResponse(response_generator(), media_type="application/json")

@@ -1,0 +1,107 @@
+2025-02-20 11:52:07,816:INFO:로깅 시스템 초기화 완료.
+2025-02-20 11:52:07,818:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 11:52:07,819:ERROR:OpenAI 클라이언트 초기화 실패: OpenAI API 키가 설정되지 않았습니다. 환경 변수 'OPENAI_API_KEY'를 설정해주세요.
+2025-02-20 11:52:23,546:INFO:로깅 시스템 초기화 완료.
+2025-02-20 11:52:23,546:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 11:52:23,558:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 11:52:24,113:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 11:52:28,825:INFO:initializing identifier
+2025-02-20 11:52:33,478:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 12:10:22,863:INFO:로깅 시스템 초기화 완료.
+2025-02-20 12:10:22,863:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 12:10:22,872:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 12:10:23,428:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 12:10:28,265:INFO:initializing identifier
+2025-02-20 12:14:18,846:INFO:로깅 시스템 초기화 완료.
+2025-02-20 12:14:18,846:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 12:14:18,856:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 12:14:19,408:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 12:14:23,478:INFO:initializing identifier
+2025-02-20 12:45:51,811:INFO:로깅 시스템 초기화 완료.
+2025-02-20 12:45:51,812:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 12:45:51,823:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 12:45:52,416:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 12:45:57,176:INFO:initializing identifier
+2025-02-20 12:50:58,761:INFO:로깅 시스템 초기화 완료.
+2025-02-20 12:50:58,761:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 12:50:58,771:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 12:50:59,334:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 12:51:06,389:INFO:initializing identifier
+2025-02-20 12:51:14,597:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 12:51:27,562:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 12:51:42,069:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 13:00:26,988:INFO:로깅 시스템 초기화 완료.
+2025-02-20 13:00:26,988:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 13:00:26,998:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 13:00:27,525:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 13:00:32,994:INFO:initializing identifier
+2025-02-20 13:00:38,364:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 13:00:55,649:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 15:57:47,061:INFO:로깅 시스템 초기화 완료.
+2025-02-20 15:57:47,061:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 15:57:47,092:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 15:57:47,702:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 15:58:32,796:INFO:로깅 시스템 초기화 완료.
+2025-02-20 15:58:32,796:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 15:58:32,808:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 15:58:33,371:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:00:22,622:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:00:22,622:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:00:22,633:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:00:23,200:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:04:53,889:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:04:53,889:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:04:53,901:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:04:54,452:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:15:37,479:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:15:37,479:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:15:37,491:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:15:38,052:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:15:44,444:INFO:initializing identifier
+2025-02-20 16:16:29,039:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:16:29,039:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:16:29,050:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:16:29,594:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:16:35,166:INFO:initializing identifier
+2025-02-20 16:16:56,725:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:16:56,725:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:16:56,735:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:16:57,298:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:17:22,343:INFO:initializing identifier
+2025-02-20 16:19:19,032:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:19:19,032:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:19:19,046:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:19:19,564:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:20:18,908:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:20:18,908:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:20:18,918:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:20:19,484:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:20:58,630:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:20:58,630:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:20:58,640:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:20:59,222:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:21:02,946:INFO:initializing identifier
+2025-02-20 16:24:42,296:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:24:42,296:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:24:42,307:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:24:42,863:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:24:47,864:INFO:initializing identifier
+2025-02-20 16:27:00,058:INFO:로깅 시스템 초기화 완료.
+2025-02-20 16:27:00,058:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 16:27:00,086:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 16:27:00,718:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 16:27:04,291:INFO:initializing identifier
+2025-02-20 18:25:20,542:INFO:로깅 시스템 초기화 완료.
+2025-02-20 18:25:20,543:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 18:25:20,552:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 18:25:21,104:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 18:25:25,152:INFO:initializing identifier
+2025-02-20 18:25:30,206:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 18:25:56,984:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 18:30:23,675:INFO:로깅 시스템 초기화 완료.
+2025-02-20 18:30:23,675:INFO:쿼리 로깅 시스템 초기화 완료.
+2025-02-20 18:30:23,699:INFO:OpenAI 클라이언트가 성공적으로 초기화되었습니다.
+2025-02-20 18:30:24,326:INFO:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-02-20 18:30:32,069:INFO:initializing identifier
+2025-02-20 18:30:35,613:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-20 18:30:46,351:INFO:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

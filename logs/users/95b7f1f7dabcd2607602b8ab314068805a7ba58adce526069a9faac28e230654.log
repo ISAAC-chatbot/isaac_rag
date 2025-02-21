@@ -1,0 +1,81 @@
+2025-02-20 12:45:57,173:INFO:[세션 6q5431oi2qj-ip hash:12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36] 
+ 사용자 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:45:57,173:INFO:선택된 검색 방법: ISAAC Basic - 균형 잡힌 검색
+2025-02-20 12:45:59,476:INFO:감지된 언어: ko
+2025-02-20 12:45:59,476:INFO:새로운 쿼리 수신: 2025-1 학부 등록금 납부 일정 (언어: ko)
+2025-02-20 12:45:59,478:INFO:쿼리 상태 확인 완료
+2025-02-20 12:45:59,479:INFO:=== 병렬 쿼리 처리 시작 ===
+2025-02-20 12:45:59,479:INFO:=== 주제어 추출 시작 ===
+2025-02-20 12:45:59,479:INFO:분석할 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:45:59,480:INFO:매칭되는 키워드가 없습니다. 빈 토픽으로 즉시 반환합니다.
+2025-02-20 12:45:59,480:INFO:=== Query Rewrite Process Started ===
+2025-02-20 12:45:59,480:INFO:Current Query: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:45:59,480:INFO:Query History Count: 0
+2025-02-20 12:45:59,486:INFO:Query '2025-1 학부 등록금 납부 일정' already exists in the embeddings file.
+2025-02-20 12:45:59,486:INFO:병렬 처리 완료 - 최종 토픽: []
+2025-02-20 12:45:59,487:INFO:=== 병렬 문서 검색 시작 ===
+2025-02-20 12:45:59,488:INFO:=== 문서 검색 시작 ===
+2025-02-20 12:45:59,494:INFO:Query '2025-1 학부 등록금 납부 일정' already exists in the embeddings file.
+2025-02-20 12:45:59,516:INFO:
+ 
+ response : <Response [404]>
+2025-02-20 12:45:59,517:ERROR:검색 실패: 404 - {"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no such index [None]","index":"None","resource.id":"None","resource.type":"index_or_alias","index_uuid":"_na_"}],"type":"index_not_found_exception","reason":"no such index [None]","index":"None","resource.id":"None","resource.type":"index_or_alias","index_uuid":"_na_"},"status":404}
+2025-02-20 12:45:59,517:INFO:검색된 총 문서 수: 0 (공지사항: 0, 일반문서: 0)
+2025-02-20 12:45:59,519:INFO:AI를 위한 컨텍스트 텍스트 생성 시작.
+2025-02-20 12:45:59,519:INFO:컨텍스트 텍스트 생성 완료.
+2025-02-20 12:45:59,519:INFO:생성된 컨텍스트 텍스트 내용: ...
+
+2025-02-20 12:45:59,520:INFO:=== 가상 응답 생성 노드 도달 ===
+2025-02-20 12:45:59,522:INFO:=== 응답 생성 시작 ===
+2025-02-20 12:45:59,522:INFO:입력 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:45:59,522:INFO:입력 컨텍스트: 
+2025-02-20 12:45:59,522:WARNING:컨텍스트가 비어있어 기본 응답을 반환합니다.
+2025-02-20 12:45:59,524:INFO:대화 #1 기록됨:
+{
+  "id": 1,
+  "original_query": "2025-1 학부 등록금 납부 일정",
+  "rewritten_query": "2025-1 학부 등록금 납부 일정",
+  "response": "죄송합니다. 관련된 정보를 찾을 수 없습니다. 다른 질문을 해주시겠어요?",
+  "timestamp": 1740055559.524719
+}
+2025-02-20 12:46:10,460:INFO:[세션 6q5431oi2qj-ip hash:12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36] 
+ 사용자 쿼리: 2025-1학기 추가등록 언제야?
+2025-02-20 12:46:10,460:INFO:선택된 검색 방법: ISAAC Basic - 균형 잡힌 검색
+2025-02-20 12:46:10,460:INFO:새 검색 설정으로 업데이트: {'search_method': 'ISAAC Basic - 균형 잡힌 검색'}
+2025-02-20 12:46:10,462:INFO:감지된 언어: ko
+2025-02-20 12:46:10,463:INFO:새로운 쿼리 수신: 2025-1학기 추가등록 언제야? (언어: ko)
+2025-02-20 12:46:10,465:INFO:쿼리 상태 확인 완료
+2025-02-20 12:46:10,471:INFO:=== 병렬 쿼리 처리 시작 ===
+2025-02-20 12:46:10,472:INFO:=== 주제어 추출 시작 ===
+2025-02-20 12:46:10,472:INFO:분석할 쿼리: 2025-1학기 추가등록 언제야?
+2025-02-20 12:46:10,472:INFO:매칭되는 키워드가 없습니다. 빈 토픽으로 즉시 반환합니다.
+2025-02-20 12:46:10,472:INFO:=== Query Rewrite Process Started ===
+2025-02-20 12:46:10,472:INFO:Current Query: 2025-1학기 추가등록 언제야?
+2025-02-20 12:46:10,472:INFO:Query History Count: 1
+2025-02-20 12:46:10,485:INFO:Query '2025-1학기 추가등록 언제야?' already exists in the embeddings file.
+2025-02-20 12:46:10,486:INFO:병렬 처리 완료 - 최종 토픽: []
+2025-02-20 12:46:10,487:INFO:=== 병렬 문서 검색 시작 ===
+2025-02-20 12:46:10,488:INFO:=== 문서 검색 시작 ===
+2025-02-20 12:46:10,503:INFO:Query '2025-1학기 추가등록 언제야?' already exists in the embeddings file.
+2025-02-20 12:46:10,524:INFO:
+ 
+ response : <Response [404]>
+2025-02-20 12:46:10,524:ERROR:검색 실패: 404 - {"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no such index [None]","index":"None","resource.id":"None","resource.type":"index_or_alias","index_uuid":"_na_"}],"type":"index_not_found_exception","reason":"no such index [None]","index":"None","resource.id":"None","resource.type":"index_or_alias","index_uuid":"_na_"},"status":404}
+2025-02-20 12:46:10,526:INFO:검색된 총 문서 수: 0 (공지사항: 0, 일반문서: 0)
+2025-02-20 12:46:10,530:INFO:AI를 위한 컨텍스트 텍스트 생성 시작.
+2025-02-20 12:46:10,530:INFO:컨텍스트 텍스트 생성 완료.
+2025-02-20 12:46:10,530:INFO:생성된 컨텍스트 텍스트 내용: ...
+
+2025-02-20 12:46:10,534:INFO:=== 가상 응답 생성 노드 도달 ===
+2025-02-20 12:46:10,537:INFO:=== 응답 생성 시작 ===
+2025-02-20 12:46:10,538:INFO:입력 쿼리: 2025-1학기 추가등록 언제야?
+2025-02-20 12:46:10,538:INFO:입력 컨텍스트: 
+2025-02-20 12:46:10,538:WARNING:컨텍스트가 비어있어 기본 응답을 반환합니다.
+2025-02-20 12:46:10,545:INFO:대화 #2 기록됨:
+{
+  "id": 2,
+  "original_query": "2025-1학기 추가등록 언제야?",
+  "rewritten_query": "2025-1학기 추가등록 언제야?",
+  "response": "죄송합니다. 관련된 정보를 찾을 수 없습니다. 다른 질문을 해주시겠어요?",
+  "timestamp": 1740055570.5456898
+}

@@ -1,0 +1,556 @@
+2025-02-20 12:51:06,385:INFO:[세션 ylvq50ucek-ip hash:12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36] 
+ 사용자 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:51:06,385:INFO:선택된 검색 방법: ISAAC Basic - 균형 잡힌 검색
+2025-02-20 12:51:08,888:INFO:감지된 언어: ko
+2025-02-20 12:51:08,888:INFO:새로운 쿼리 수신: 2025-1 학부 등록금 납부 일정 (언어: ko)
+2025-02-20 12:51:08,892:INFO:쿼리 상태 확인 완료
+2025-02-20 12:51:08,894:INFO:=== 병렬 쿼리 처리 시작 ===
+2025-02-20 12:51:08,895:INFO:=== 주제어 추출 시작 ===
+2025-02-20 12:51:08,895:INFO:분석할 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:51:08,896:INFO:매칭되는 키워드가 없습니다. 빈 토픽으로 즉시 반환합니다.
+2025-02-20 12:51:08,896:INFO:=== Query Rewrite Process Started ===
+2025-02-20 12:51:08,896:INFO:Current Query: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:51:08,896:INFO:Query History Count: 0
+2025-02-20 12:51:08,908:INFO:Query '2025-1 학부 등록금 납부 일정' already exists in the embeddings file.
+2025-02-20 12:51:08,909:INFO:병렬 처리 완료 - 최종 토픽: []
+2025-02-20 12:51:08,911:INFO:=== 병렬 문서 검색 시작 ===
+2025-02-20 12:51:08,912:INFO:=== 문서 검색 시작 ===
+2025-02-20 12:51:08,921:INFO:Query '2025-1 학부 등록금 납부 일정' already exists in the embeddings file.
+2025-02-20 12:51:09,386:INFO:
+ 
+ response : <Response [200]>
+2025-02-20 12:51:09,387:INFO:검색된 총 문서 수: 5 (공지사항: 0, 일반문서: 5)
+2025-02-20 12:51:09,388:INFO:AI를 위한 컨텍스트 텍스트 생성 시작.
+2025-02-20 12:51:09,388:INFO:컨텍스트 텍스트 생성 완료.
+2025-02-20 12:51:09,389:INFO:생성된 컨텍스트 텍스트 내용: 
+                        --------------------
+                        CONTEXT 0 : [
+                        BEGIN OF CONTEXT 0
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=241794&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [신촌/국제총무처 재무회계팀] title: '2025-1 학부/일반대학원 등록금 분할납부 신청안내(Tuition Installment Plan for Undergrad & General Grad)' date: 2024.12.17 
+ - <2025-1학기 학부 및 일반대학원 등록금 분할납부 신청안내> - [신청 기간] - ▶ 2024. 12. 24.(화) ~ 2025. 2. 6.(목) (기간 종료 후 신청 불가) - [분할납부 불가대상] - 1. 2025-1학기 신입생, 편입생, 재입학생 (첫 학기) - 2. 정부학자금 대출 신청자 (분할납부 1차 금액 납부 후에는 분납 취소 후 학자금 대출로의 전환 불가) - 3. 대학원 계약학과 학생 및 신청학점 없는 연구지도 신청자 (등록금의 12/100납부자) - 4. 직전학기 분납 미납자 - 5. 4회 신청자 중 등록금의 3/4이상 장학 수혜자 및 학기초과 감면을 받는자 - 6. 2회 신청자 중 등록금의 1/2이상 장학 수혜자 및 학기초과 감면을 받는자 - [신청 및 변경 절차] - 학사포탈(portal.yonsei.ac.kr) → 로그인 → 학사행정 → 등록 → 분할납부신청 - [분할납부 기간 및 방법] - * 마감시간(마지막 날짜 17시 정각) 이후 납부 불가하며, 분납이 취소되오니 유의 바랍니다. - [유의사항] - ▶ 분할납부 신청 시, 등록금신용카드 납부 불가함(분납을 취소해도 신용카드 납부로의 전환 불가) - ▶ 복학예정자는 복학신청 이전이라도 분할납부를 원할 경우 미리 신청해야 함 - ▶ 1차 납부 기간에 미납 시 자동으로 분납 신청이 취소되며,추가등록 기간(2025. 3. 12. ~ 3. 14.)에 등록금 전액을 납부해야 함 - ▶각 차수별분납액 미납 시 분납은 자동으로 취소되며 잔액 전액을 즉시 납부하여야 함. 잔액 납부 미이행 시에는 미등록으로 간주되며 학칙에 따라 학기 이수가 불가함 (이월 납부 불가) - ▶ 분납 신청기간 마감 후 분납을 취소하거나, 분할납부 미납 발생 시에는다음학기 분납 신청이 제한됨 - ▶ 학기초과자, 장학금 수혜자의 경우 납부 금액 확인 - - 분할납부 금액은전공별 수업료총액을 기준으로 계산(본인의 납부 금액 기준이 아님) - - 감면액 및 장학금액은 분할납부마지막 회차부터 차감되어 적용 - 예1) 장학: 등록금 4,120,000원, 분할납부 4회 신청자가 100만원 장학금 수령 시(납부총액 3,120,000원) - - 1차: 1,030,000원 납부/ 2차: 1,030,000원 납부/ 3차: 1,030,000원 납부, 4차: 30,000원 납부 - 예2) 학기초과자: 등록금 3,600,000원, 분할납부 4회 신청자가 2/3 감면 받는 경우 (납부총액 1,200,000원) - - 1차(본등록기간): 900,000원 납부 / 2차: 300,000원 납부/ 3, 4차: 납부 금액 없음 - ▶ 외화송금의 경우 등록기간 중 납부가 되도록 하며 수수료 등을 감안하여 납부할 것 (차액은 추후 반환됨) - ▶신청이 완료되면 신청화면 상단에신청일자 및 시간이 붉은색으로 표시되니 필히 확인요망 - ▶ 분할납부 신청은 지정된 기간만 가능하며 조건 미달 시 분납신청이 자동으로 취소됨 - ※ 홈페이지 [학사지원] – [등록금] - [등록금납부/반환] - [분할납부]에서 자세한 사항 확인 - ※ 문의사항: 재무회계팀 02-2123-4500 (fiwebmaster@yonsei.ac.kr) - 연 세 대 학 교 총 무 처 장 - <2025 1st Semester Instruction of Tuition Installment Plan(TIP) for Undergraduate and General graduate school> - [Application period] - ▶ 2024. 12. 24.(Tue.) ~ 2025. 2. 6.(Thr.)(Application is available during the given peirod ONLY.) - [StudentsNOTqualified for TIP] - ▶ Freshmen, Re-admitted students, Transfer students for 2025Spring Semester (only the first semester) - ▶ Students who have applied for a government guaranteed students loan - ▶ Students who have applied for research guidance without registered credit (12/100 payment) - ▶ Students who failed to make one of payments during the last semester’s tuition installment plan - ▶ For 4 installment, scholarship or extra semester reduction of an amount greater than 3/4 of tuition. - ▶ For 2 installment, scholarship or extra semester reduction of an amount greater than 1/2 of tuition. - [Application and change procedures] - ▶ Visit Yonsei portal system (http://portal.yonsei.ac.kr/main/indexe.jsp) → Academic information →Registration → Application for Installment Payment - [Periods and methods of TIP] - * Please keep in mind that deadline for each payment is 17:00 on last day of each period - [Please Note] - ▶ Credit card payments areNOTavailable for TIP applicants - ▶ Students returning to school can apply for the installment payment plan before applying to return. - ▶ If the 1st payment is not made properly, the TIP will beautomatically canceled,and the full tuition must be paid during the additional application period (2025. 3. 12. ~ 3. 14.) - ▶If the TIP is not paid properly, the TIP will be automatically canceled, and the full remaining balance must be paid immediately.If the balance is not paid, it’s considered unregistered and the semester cannot be completed according to the school regulations (NOT CARRIED OVER TO NEXT PAYMENT) - ▶ Overseas remittance must beconfirmed within scheduled payment period.Consider bank charges and exchange rateswhen sending from overseas. (The full amount must be confirmed) Overpaid tuition will be returned to the bank account registered at Yonsei Portal. - ▶ If the TIP is not paid on time, the application for TIP for the next semester is restricted. - ▶If the application is completed, the date and time of application will be displayed on the screen - ▶ Applications for installment payment can only be made during the designated period and if not qualified, it will be canceled without notice. - ▶ If there’s reduction (taking extra semester or receiving scholarships), the amount of TIP is calculated on the basis offull tuitionand the amount of reduction will be deducted from the final payment - case) Tuition: KRW 4,120,000, 4 installment, KRW 1,000,000 scholarship (Sum payment: KRW 3,120,000) - - You need to pay for 1st, 2nd, 3rd : KRW 1,030,000, 4th: KRW 30,000 - Vice President for General Affairs,Yonsei University
+
+                            [TABLES]
+                            [{'table': [{'col': 0, 'text': '구분', 'row': 0}, {'colspan': 2, 'col': 1, 'text': '등록금 납부 기간', 'row': 0}, {'col': 3, 'text': '등록금액', 'row': 0}, {'col': 4, 'text': '등록방법', 'row': 0}, {'col': 0, 'rowspan': 2, 'text': '2회 신청', 'row': 1}, {'col': 1, 'text': '1차', 'row': 1}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 1}, {'col': 3, 'text': '전공별 수업료의 50%+자율경비', 'row': 1}, {'col': 4, 'rowspan': 6, 'text': '우리은행가상 계좌 입금(신용카드납부 불가)', 'row': 1}, {'col': 1, 'text': '2차', 'row': 2}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 2}, {'col': 3, 'text': '전공별 수업료의 50%', 'row': 2}, {'col': 0, 'rowspan': 4, 'text': '4회 신청', 'row': 3}, {'col': 1, 'text': '1차', 'row': 3}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 3}, {'col': 3, 'text': '전공별 수업료의 25%+자율경비', 'row': 3}, {'col': 1, 'text': '2차', 'row': 4}, {'col': 2, 'text': '2025. 3. 18. ~ 3. 21. 17:00', 'row': 4}, {'col': 3, 'rowspan': 3, 'text': '전공별 수업료의 25%', 'row': 4}, {'col': 1, 'text': '3차', 'row': 5}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 5}, {'col': 1, 'text': '4차', 'row': 6}, {'col': 2, 'text': '2025. 4. 25. ~ 4. 28. 17:00', 'row': 6}]}, {'table': [{'col': 0, 'text': 'Installment', 'row': 0}, {'colspan': 2, 'col': 1, 'text': 'Registration Period', 'row': 0}, {'col': 3, 'text': 'Tuition', 'row': 0}, {'col': 4, 'text': 'Method', 'row': 0}, {'col': 0, 'rowspan': 2, 'text': '2Installments', 'row': 1}, {'col': 1, 'text': '1st', 'row': 1}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 1}, {'col': 3, 'text': '50% of tuition + Miscellaneous fees', 'row': 1}, {'col': 4, 'rowspan': 6, 'text': 'Deposit in Woori Bank virtual account(Credit card is NOT available)', 'row': 1}, {'col': 1, 'text': '2nd', 'row': 2}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 2}, {'col': 3, 'text': '50% of tuition', 'row': 2}, {'col': 0, 'rowspan': 4, 'text': '4Installments', 'row': 3}, {'col': 1, 'text': '1st', 'row': 3}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 3}, {'col': 3, 'text': '25% of tuition + Miscellaneous fees', 'row': 3}, {'col': 1, 'text': '2nd', 'row': 4}, {'col': 2, 'text': '2025. 3. 18. ~ 3. 21. 17:00', 'row': 4}, {'col': 3, 'rowspan': 3, 'text': '25% of tuition', 'row': 4}, {'col': 1, 'text': '3rd', 'row': 5}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 5}, {'col': 1, 'text': '4th', 'row': 6}, {'col': 2, 'text': '2025. 4. 25. ~ 4. 28. 17:00', 'row': 6}]}]
+
+                        END OF CONTEXT 0
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 1 : [
+                        BEGIN OF CONTEXT 1
+
+                            [URL]
+                            https://yonsei.ac.kr/sc/support/payment.jsp?cYear=2025
+
+                            [TEXT]
+                             학사지원 등록금 등록금 일정 홈 1뎁스메뉴 2뎁스메뉴 학사지원 학사정보 학사일정 학사행정 휴학 복학 캠퍼스 내 소속변경 졸업 및 수료신청 학적부 기재사항 변경 자원퇴학제적 재입학 캠퍼스내 복수전공 부전공 학점인정절차 증명서 발급 학부·대학원 증명 발급 교직원 증명 발급 대학요람 교육과정 교과이수 수강신청 성적 평가 성적에 따른 상벌 재수강 전공신청/승인 전공신청/승인 연계전공 영어인증제 유학 및 연수생 교직과정 평생교육사과정 계절제 수업 국내대학 교환프로그램 등록금 등록금 일정 등록금 명세표 학부 일반대학원 전문특수대학원 등록금납부/반환 가상계좌이체 분할납부 학자금대출 신용카드납부 대상별 등록금 납부 신입생·편입생·재입학생 학기초과자 특수교육대상자 복학생 분할납부신청자 장학금수혜자 학자금대출자 계절학기 장학금 장학금 안내 신문고 장학금 온라인도우미/건의함 각종 서식 및 기타 각종 신청서양식 모음 교내 분실물 게시판 등록금 일정 2025년도 등록금일정 학기선택 2025년 2024년 2023년 2022년 2021년 등록금 일정 미작성 표 01 JAN 02 FEB 03 MAR 04 APR 05 MAY 06 JUN 07 JUL 08 AUG 연세 서비스 채용공고 대관 및 예약안내 셔틀버스 예약 전화번호 통합검색 캠퍼스 가이드 오시는 길 재난 및 안전관리 체계 온라인 도우미 연세 SNS 페이스북 네이버 블로그 Youtube 인스타그램 방문자 서비스 연세인 예비연세인 졸업생 일반인 증명서발급 학사일정 학사행정 장학금안내 연세소개 캠퍼스 가이드 캠퍼스 견학신청 대학입학안내 대학원 입학안내 증명서 발급 연세대학교 발전기금 총동문회 보도자료 홍보 브로슈어 포토갤러리 교내 사이트 연세포탈 연세메일 LearnUs 학술문화처(도서관) 정보통신서비스 연세대학교 입학처 커리어연세 연세대학교 발전기금 교내홈페이지 검색 스마트 캠퍼스 
+
+                            [TABLES]
+                            [{'table': [{'col': 0, 'text': '01 JAN', 'row': 0}, {'col': 1, 'text': '', 'row': 0}, {'col': 2, 'text': '', 'row': 0}, {'col': 0, 'text': '02 FEB', 'row': 1}, {'col': 1, 'text': '', 'row': 1}, {'col': 2, 'text': '', 'row': 1}, {'col': 0, 'text': '03 MAR', 'row': 2}, {'col': 1, 'text': '', 'row': 2}, {'col': 2, 'text': '', 'row': 2}, {'col': 0, 'text': '04 APR', 'row': 3}, {'col': 1, 'text': '', 'row': 3}, {'col': 2, 'text': '', 'row': 3}, {'col': 0, 'text': '05 MAY', 'row': 4}, {'col': 1, 'text': '', 'row': 4}, {'col': 2, 'text': '', 'row': 4}, {'col': 0, 'text': '06 JUN', 'row': 5}, {'col': 1, 'text': '', 'row': 5}, {'col': 2, 'text': '', 'row': 5}, {'col': 0, 'text': '07 JUL', 'row': 6}, {'col': 1, 'text': '', 'row': 6}, {'col': 2, 'text': '', 'row': 6}, {'col': 0, 'text': '08 AUG', 'row': 7}, {'col': 1, 'text': '', 'row': 7}, {'col': 2, 'text': '', 'row': 7}]}]
+
+                        END OF CONTEXT 1
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 2 : [
+                        BEGIN OF CONTEXT 2
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/calendar.jsp?cYear=2025&hakGi=1
+
+                            [TEXT]
+                            
+title: 2025-1학기 등록금 납부 기한 2월 21(금)~27(목)
+    
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 2
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 3 : [
+                        BEGIN OF CONTEXT 3
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=242357&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [공통총무처 재무회계팀] title: '2025-1학기 전문/특수대학원 신입생 등록안내' date: 2024.12.26 
+ - 2025-1학기 전문/특수대학원 신입생 등록안내 - * 외국인의 경우 자율경비 선택기간 및 등록금 납부기간이 상이하니 유의하여 등록하시기 바랍니다. - 1. 등록금 납부 기간 - 가. 대한민국 국적자:  2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나. 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 2. 자율경비 - 가. 선택기간 - 1) 대한민국 국적자: 2025. 2. 3.(월) 09:30 ~ 2. 5.(수) 12:00 - 2) 외국 국적자(Foreign students): 2025. 1. 7.(화) 09:30 ~ 1. 8.(수) 16:00 - 나.경영전문대학원, 국제학대학원 및 특수대학원 신입생은 자율경비 선택 없음 - 다. 선택방법:연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인 [ID: 수험번호(대문자), Password: 주민번호 앞 6자리] - → 학사행정 → 등록 → 자율경비 선택 → 납부하고자 하는 항목 클릭 → 동의문구 입력 → 맨 아래 하단에 ‘확정’ 버튼 클릭 - (확정버튼을 누르지 않으면 선택되지 않으며,확정 후 변경은 불가함.) - 라. 납부방법:등록금 납부기간에 등록금과 함께 일괄 납부 - 마. 유의사항 - 1) 자율경비 선택 및 수정은선택기간중에만 가능함 - 2) 자율경비 선택 내역을 ‘임시저장’한 경우에는 수정 가능하나,‘확정’ 버튼을 클릭한 후에는 수정이 일체 불가함 - 3. 등록금 조회 및 고지서 출력 - 가. 대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나. 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 다. 고지서 출력방법 :연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인[ID:수험번호(대문자), Password: 주민번호 앞 6자리] → 학사행정 → 등록 → 등록금고지서출력 - (등록금 납부메뉴 사용안내 참고) - 라. 유의 사항 - 1) 등록금 고지서는정해진 조회 기간에만 조회 및 발급 가능 - 2)등록금 납부 후에는 어떠한 방법으로도 고지서 출력이 불가(필요 시 납부하기 전 출력) - 4. 납부방법 - 가. 우리은행 입금전용계좌(가상계좌)로의 계좌이체 납부 - 1) 전체 금융기관을 이용하여 고지서에 명시된 입금 전용 계좌로전액 일괄 입금 - - 입금전용계좌(가상계좌)는학생 1인당 1계좌를 부여함 - - 학생 본인이 아닌 타인 명의로 입금하여도 (=입금자 이름이 달라도) 해당 입금전용계좌로 입금하면자동으로 즉시 등록 처리됨. - - 입금 금액이 일치하지 않으면 납부가 불가하므로고지서 금액을 정확히 한번에 입금하여야 함 - 2) 납부방법: 인터넷뱅킹, 폰뱅킹, ATM이체, 창구납부 등 모두 가능 - 3) 유의사항 - 가) 우리은행 외 타 은행을 이용할 경우 송금수수료가 발생할 수 있음 - 나) CMA 통장 등 제 2금융권 일부 계좌에서는 송금이 불가할 수 있음 - 다)금액 분할 납부는 불가하므로 본인의 이체 한도를 사전에 확인 바람 - 라)납부 방법 변경(계좌이체→신용카드) 등을 위한 납입금 반환은 불가함 - 나. 신용카드 납부 - 1) 사용 가능 카드:‘우리 신용카드’ (타사 카드 불가, 체크카드 및 법인카드 사용 불가) - 2) 납부 방법 - 가) 우리카드 홈페이지: 홈페이지 접속(http://card.wooribank.com) – 라이프 – 납부서비스 – 대학등록금 메뉴 - 나) 우리카드 고객센터: 1588-9955, 1599-9955 - 다) 우리은행 전국지점 방문 - 3) 유의사항 - 가) 신용카드 납부 시납부 후 4시간 이후에 연세포탈에 등록 반영됩니다. - 나) 카드 납부는 전액 결제 시 가능하며,분할 결제 및 일부 결제는 불가함 - 다) 본인 명의의 카드가 아니어도 납부 가능하며, 취소는 납부 당일에만 가능 (카드사 문의) - 라) 할부서비스 이용 가능하며, 이자 등 자세한 사항은 카드사로 문의 - 마) 등록금 카드 결제 금액은연말정산 소득공제 시 카드 사용금액에서 제외됨 - 5. 등록금 납부 확인 - 가. 연세대학교 학사포탈(http://portal.yonsei.ac.kr)에 접속 → 로그인 → 학사행정 → 등록 → 등록금납부확인서 출력→ 해당 학년도학기 선택 → 국문/영문선택 → 출력 - 연세대학교 총무처 재무·회계팀
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 3
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 4 : [
+                        BEGIN OF CONTEXT 4
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=242355&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [공통총무처 재무회계팀] title: '2025-1학기 일반대학원 신입생 등록안내' date: 2024.12.26 
+ - 2025-1학기 일반대학원 신입생 등록안내 - * 외국인의 경우 자율경비 선택기간 및 등록금 납부기간이 상이하니 유의하여 등록하시기 바랍니다. - 1. 등록금 납부 기간 - 가.대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나.외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 2. 자율경비 - 가. 선택기간 - 1) 대한민국 국적자: 2025. 2. 3.(월) 09:30 ~ 2. 5.(수) 12:00 - 2) 외국 국적자(Foreign students): 2025. 1. 7.(화) 09:30 ~ 1. 8.(수) 16:00 - 나. 선택방법:연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인 [ID: 수험번호(대문자), Password: 주민번호 앞 6자리] - → 학사행정 → 등록 → 자율경비 선택 → 납부하고자 하는 항목 클릭 → 동의문구 입력 → 맨 아래 하단에 ‘확정’ 버튼 클릭 - (확정버튼을 누르지 않으면 선택되지 않으며,확정 후 변경은 불가함.) - 다. 납부방법:등록금 납부기간에 등록금과 함께 일괄 납부 - 라. 유의사항 - 1) 자율경비 선택 및 수정은선택기간중에만 가능함 - 2) 자율경비 선택 내역을 ‘임시저장’한 경우에는 수정 가능하나,‘확정’ 버튼을 클릭한 후에는 수정이 일체 불가함 - 3. 등록금 조회 및 고지서 출력 - 가. 등록금 고지서 출력 가능 기간: - 1) 대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 2) 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 나. 고지서 출력방법 : 연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인[ID:수험번호(대문자), Password: 주민번호 앞 6자리] → 학사행정 → 등록 → 등록금고지서출력(등록금 납부메뉴 사용안내 참고) - 다. 유의 사항 - 1) 등록금 고지서는정해진 조회 기간에만 조회 및 발급 가능 - 2)등록금 납부 후에는 어떠한 방법으로도 고지서 출력이 불가(필요 시 납부하기 전 출력) - 4. 납부방법 - 가. 우리은행 입금전용계좌(가상계좌)로의 계좌이체 납부 - 1) 전체 금융기관을 이용하여 고지서에 명시된 입금 전용 계좌로전액 일괄 입금 - - 입금전용계좌(가상계좌)는학생 1인당 1계좌를 부여함 - - 학생 본인이 아닌 타인 명의로 입금하여도 (=입금자 이름이 달라도) 해당 입금전용계좌로 입금하면자동으로 즉시 등록 처리됨. - - 입금 금액이 일치하지 않으면 납부가 불가하므로고지서 금액을 정확히 한번에 입금하여야 함 - 2) 납부방법: 인터넷뱅킹, 폰뱅킹, ATM이체, 창구납부 등 모두 가능 - 3) 유의사항 - 가) 우리은행 외 타 은행을 이용할 경우 송금수수료가 발생할 수 있음 - 나) CMA 통장 등 제 2금융권 일부 계좌에서는 송금이 불가할 수 있음 - 다)금액 분할 납부는 불가하므로 본인의 이체 한도를 사전에 확인 바람 - 라)납부 방법 변경(계좌이체→신용카드) 등을 위한 납입금 반환은 불가함 - 나. 신용카드 납부 - 1) 사용 가능 카드:‘우리 신용카드’ (타사 카드 불가, 체크카드 및 법인카드 사용 불가) - 2) 납부 방법 - 가) 우리카드 홈페이지: 홈페이지 접속(http://card.wooribank.com) – 라이프 – 납부서비스 – 대학등록금 메뉴 - 나) 우리카드 고객센터: 1588-9955, 1599-9955 - 다) 우리은행 전국지점 방문 - 3) 유의사항 - 가) 신용카드 납부 시납부 후 4시간 이후에 연세포탈에 등록 반영됩니다. - 나) 카드 납부는 전액 결제 시 가능하며,분할 결제 및 일부 결제는 불가함 - 다) 본인 명의의 카드가 아니어도 납부 가능하며, 취소는 납부 당일에만 가능 (카드사 문의) - 라) 할부서비스 이용 가능하며, 이자 등 자세한 사항은 카드사로 문의 - 마) 등록금 카드 결제 금액은연말정산 소득공제 시 카드 사용금액에서 제외됨 - 5. 등록금 납부 확인 - 가. 등록금 납부확인서 출력방법 :  연세대학교 학사포탈(http://portal.yonsei.ac.kr)에 접속 → 로그인 → 학사행정 → 등록 → 등록금납부확인서 출력→ 해당 학년도학기 선택 → 국문/영문선택 → 출력 - 연세대학교 총무처 재무·회계팀
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 4
+                        ]
+                        --------------------
+                        ...
+
+2025-02-20 12:51:09,389:INFO:=== 가상 응답 생성 노드 도달 ===
+2025-02-20 12:51:09,391:INFO:=== 응답 생성 시작 ===
+2025-02-20 12:51:09,391:INFO:입력 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:51:09,391:INFO:입력 컨텍스트: 
+                        --------------------
+                        CONTEXT 0 : [
+                        BEGIN OF CONTEXT 0
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=241794&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [신촌/국제총무처 재무회계팀] title: '2025-1 학부/일반대학원 등록금 분할납부 신청안내(Tuition Installment Plan for Undergrad & General Grad)' date: 2024.12.17 
+ - <2025-1학기 학부 및 일반대학원 등록금 분할납부 신청안내> - [신청 기간] - ▶ 2024. 12. 24.(화) ~ 2025. 2. 6.(목) (기간 종료 후 신청 불가) - [분할납부 불가대상] - 1. 2025-1학기 신입생, 편입생, 재입학생 (첫 학기) - 2. 정부학자금 대출 신청자 (분할납부 1차 금액 납부 후에는 분납 취소 후 학자금 대출로의 전환 불가) - 3. 대학원 계약학과 학생 및 신청학점 없는 연구지도 신청자 (등록금의 12/100납부자) - 4. 직전학기 분납 미납자 - 5. 4회 신청자 중 등록금의 3/4이상 장학 수혜자 및 학기초과 감면을 받는자 - 6. 2회 신청자 중 등록금의 1/2이상 장학 수혜자 및 학기초과 감면을 받는자 - [신청 및 변경 절차] - 학사포탈(portal.yonsei.ac.kr) → 로그인 → 학사행정 → 등록 → 분할납부신청 - [분할납부 기간 및 방법] - * 마감시간(마지막 날짜 17시 정각) 이후 납부 불가하며, 분납이 취소되오니 유의 바랍니다. - [유의사항] - ▶ 분할납부 신청 시, 등록금신용카드 납부 불가함(분납을 취소해도 신용카드 납부로의 전환 불가) - ▶ 복학예정자는 복학신청 이전이라도 분할납부를 원할 경우 미리 신청해야 함 - ▶ 1차 납부 기간에 미납 시 자동으로 분납 신청이 취소되며,추가등록 기간(2025. 3. 12. ~ 3. 14.)에 등록금 전액을 납부해야 함 - ▶각 차수별분납액 미납 시 분납은 자동으로 취소되며 잔액 전액을 즉시 납부하여야 함. 잔액 납부 미이행 시에는 미등록으로 간주되며 학칙에 따라 학기 이수가 불가함 (이월 납부 불가) - ▶ 분납 신청기간 마감 후 분납을 취소하거나, 분할납부 미납 발생 시에는다음학기 분납 신청이 제한됨 - ▶ 학기초과자, 장학금 수혜자의 경우 납부 금액 확인 - - 분할납부 금액은전공별 수업료총액을 기준으로 계산(본인의 납부 금액 기준이 아님) - - 감면액 및 장학금액은 분할납부마지막 회차부터 차감되어 적용 - 예1) 장학: 등록금 4,120,000원, 분할납부 4회 신청자가 100만원 장학금 수령 시(납부총액 3,120,000원) - - 1차: 1,030,000원 납부/ 2차: 1,030,000원 납부/ 3차: 1,030,000원 납부, 4차: 30,000원 납부 - 예2) 학기초과자: 등록금 3,600,000원, 분할납부 4회 신청자가 2/3 감면 받는 경우 (납부총액 1,200,000원) - - 1차(본등록기간): 900,000원 납부 / 2차: 300,000원 납부/ 3, 4차: 납부 금액 없음 - ▶ 외화송금의 경우 등록기간 중 납부가 되도록 하며 수수료 등을 감안하여 납부할 것 (차액은 추후 반환됨) - ▶신청이 완료되면 신청화면 상단에신청일자 및 시간이 붉은색으로 표시되니 필히 확인요망 - ▶ 분할납부 신청은 지정된 기간만 가능하며 조건 미달 시 분납신청이 자동으로 취소됨 - ※ 홈페이지 [학사지원] – [등록금] - [등록금납부/반환] - [분할납부]에서 자세한 사항 확인 - ※ 문의사항: 재무회계팀 02-2123-4500 (fiwebmaster@yonsei.ac.kr) - 연 세 대 학 교 총 무 처 장 - <2025 1st Semester Instruction of Tuition Installment Plan(TIP) for Undergraduate and General graduate school> - [Application period] - ▶ 2024. 12. 24.(Tue.) ~ 2025. 2. 6.(Thr.)(Application is available during the given peirod ONLY.) - [StudentsNOTqualified for TIP] - ▶ Freshmen, Re-admitted students, Transfer students for 2025Spring Semester (only the first semester) - ▶ Students who have applied for a government guaranteed students loan - ▶ Students who have applied for research guidance without registered credit (12/100 payment) - ▶ Students who failed to make one of payments during the last semester’s tuition installment plan - ▶ For 4 installment, scholarship or extra semester reduction of an amount greater than 3/4 of tuition. - ▶ For 2 installment, scholarship or extra semester reduction of an amount greater than 1/2 of tuition. - [Application and change procedures] - ▶ Visit Yonsei portal system (http://portal.yonsei.ac.kr/main/indexe.jsp) → Academic information →Registration → Application for Installment Payment - [Periods and methods of TIP] - * Please keep in mind that deadline for each payment is 17:00 on last day of each period - [Please Note] - ▶ Credit card payments areNOTavailable for TIP applicants - ▶ Students returning to school can apply for the installment payment plan before applying to return. - ▶ If the 1st payment is not made properly, the TIP will beautomatically canceled,and the full tuition must be paid during the additional application period (2025. 3. 12. ~ 3. 14.) - ▶If the TIP is not paid properly, the TIP will be automatically canceled, and the full remaining balance must be paid immediately.If the balance is not paid, it’s considered unregistered and the semester cannot be completed according to the school regulations (NOT CARRIED OVER TO NEXT PAYMENT) - ▶ Overseas remittance must beconfirmed within scheduled payment period.Consider bank charges and exchange rateswhen sending from overseas. (The full amount must be confirmed) Overpaid tuition will be returned to the bank account registered at Yonsei Portal. - ▶ If the TIP is not paid on time, the application for TIP for the next semester is restricted. - ▶If the application is completed, the date and time of application will be displayed on the screen - ▶ Applications for installment payment can only be made during the designated period and if not qualified, it will be canceled without notice. - ▶ If there’s reduction (taking extra semester or receiving scholarships), the amount of TIP is calculated on the basis offull tuitionand the amount of reduction will be deducted from the final payment - case) Tuition: KRW 4,120,000, 4 installment, KRW 1,000,000 scholarship (Sum payment: KRW 3,120,000) - - You need to pay for 1st, 2nd, 3rd : KRW 1,030,000, 4th: KRW 30,000 - Vice President for General Affairs,Yonsei University
+
+                            [TABLES]
+                            [{'table': [{'col': 0, 'text': '구분', 'row': 0}, {'colspan': 2, 'col': 1, 'text': '등록금 납부 기간', 'row': 0}, {'col': 3, 'text': '등록금액', 'row': 0}, {'col': 4, 'text': '등록방법', 'row': 0}, {'col': 0, 'rowspan': 2, 'text': '2회 신청', 'row': 1}, {'col': 1, 'text': '1차', 'row': 1}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 1}, {'col': 3, 'text': '전공별 수업료의 50%+자율경비', 'row': 1}, {'col': 4, 'rowspan': 6, 'text': '우리은행가상 계좌 입금(신용카드납부 불가)', 'row': 1}, {'col': 1, 'text': '2차', 'row': 2}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 2}, {'col': 3, 'text': '전공별 수업료의 50%', 'row': 2}, {'col': 0, 'rowspan': 4, 'text': '4회 신청', 'row': 3}, {'col': 1, 'text': '1차', 'row': 3}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 3}, {'col': 3, 'text': '전공별 수업료의 25%+자율경비', 'row': 3}, {'col': 1, 'text': '2차', 'row': 4}, {'col': 2, 'text': '2025. 3. 18. ~ 3. 21. 17:00', 'row': 4}, {'col': 3, 'rowspan': 3, 'text': '전공별 수업료의 25%', 'row': 4}, {'col': 1, 'text': '3차', 'row': 5}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 5}, {'col': 1, 'text': '4차', 'row': 6}, {'col': 2, 'text': '2025. 4. 25. ~ 4. 28. 17:00', 'row': 6}]}, {'table': [{'col': 0, 'text': 'Installment', 'row': 0}, {'colspan': 2, 'col': 1, 'text': 'Registration Period', 'row': 0}, {'col': 3, 'text': 'Tuition', 'row': 0}, {'col': 4, 'text': 'Method', 'row': 0}, {'col': 0, 'rowspan': 2, 'text': '2Installments', 'row': 1}, {'col': 1, 'text': '1st', 'row': 1}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 1}, {'col': 3, 'text': '50% of tuition + Miscellaneous fees', 'row': 1}, {'col': 4, 'rowspan': 6, 'text': 'Deposit in Woori Bank virtual account(Credit card is NOT available)', 'row': 1}, {'col': 1, 'text': '2nd', 'row': 2}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 2}, {'col': 3, 'text': '50% of tuition', 'row': 2}, {'col': 0, 'rowspan': 4, 'text': '4Installments', 'row': 3}, {'col': 1, 'text': '1st', 'row': 3}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 3}, {'col': 3, 'text': '25% of tuition + Miscellaneous fees', 'row': 3}, {'col': 1, 'text': '2nd', 'row': 4}, {'col': 2, 'text': '2025. 3. 18. ~ 3. 21. 17:00', 'row': 4}, {'col': 3, 'rowspan': 3, 'text': '25% of tuition', 'row': 4}, {'col': 1, 'text': '3rd', 'row': 5}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 5}, {'col': 1, 'text': '4th', 'row': 6}, {'col': 2, 'text': '2025. 4. 25. ~ 4. 28. 17:00', 'row': 6}]}]
+
+                        END OF CONTEXT 0
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 1 : [
+                        BEGIN OF CONTEXT 1
+
+                            [URL]
+                            https://yonsei.ac.kr/sc/support/payment.jsp?cYear=2025
+
+                            [TEXT]
+                             학사지원 등록금 등록금 일정 홈 1뎁스메뉴 2뎁스메뉴 학사지원 학사정보 학사일정 학사행정 휴학 복학 캠퍼스 내 소속변경 졸업 및 수료신청 학적부 기재사항 변경 자원퇴학제적 재입학 캠퍼스내 복수전공 부전공 학점인정절차 증명서 발급 학부·대학원 증명 발급 교직원 증명 발급 대학요람 교육과정 교과이수 수강신청 성적 평가 성적에 따른 상벌 재수강 전공신청/승인 전공신청/승인 연계전공 영어인증제 유학 및 연수생 교직과정 평생교육사과정 계절제 수업 국내대학 교환프로그램 등록금 등록금 일정 등록금 명세표 학부 일반대학원 전문특수대학원 등록금납부/반환 가상계좌이체 분할납부 학자금대출 신용카드납부 대상별 등록금 납부 신입생·편입생·재입학생 학기초과자 특수교육대상자 복학생 분할납부신청자 장학금수혜자 학자금대출자 계절학기 장학금 장학금 안내 신문고 장학금 온라인도우미/건의함 각종 서식 및 기타 각종 신청서양식 모음 교내 분실물 게시판 등록금 일정 2025년도 등록금일정 학기선택 2025년 2024년 2023년 2022년 2021년 등록금 일정 미작성 표 01 JAN 02 FEB 03 MAR 04 APR 05 MAY 06 JUN 07 JUL 08 AUG 연세 서비스 채용공고 대관 및 예약안내 셔틀버스 예약 전화번호 통합검색 캠퍼스 가이드 오시는 길 재난 및 안전관리 체계 온라인 도우미 연세 SNS 페이스북 네이버 블로그 Youtube 인스타그램 방문자 서비스 연세인 예비연세인 졸업생 일반인 증명서발급 학사일정 학사행정 장학금안내 연세소개 캠퍼스 가이드 캠퍼스 견학신청 대학입학안내 대학원 입학안내 증명서 발급 연세대학교 발전기금 총동문회 보도자료 홍보 브로슈어 포토갤러리 교내 사이트 연세포탈 연세메일 LearnUs 학술문화처(도서관) 정보통신서비스 연세대학교 입학처 커리어연세 연세대학교 발전기금 교내홈페이지 검색 스마트 캠퍼스 
+
+                            [TABLES]
+                            [{'table': [{'col': 0, 'text': '01 JAN', 'row': 0}, {'col': 1, 'text': '', 'row': 0}, {'col': 2, 'text': '', 'row': 0}, {'col': 0, 'text': '02 FEB', 'row': 1}, {'col': 1, 'text': '', 'row': 1}, {'col': 2, 'text': '', 'row': 1}, {'col': 0, 'text': '03 MAR', 'row': 2}, {'col': 1, 'text': '', 'row': 2}, {'col': 2, 'text': '', 'row': 2}, {'col': 0, 'text': '04 APR', 'row': 3}, {'col': 1, 'text': '', 'row': 3}, {'col': 2, 'text': '', 'row': 3}, {'col': 0, 'text': '05 MAY', 'row': 4}, {'col': 1, 'text': '', 'row': 4}, {'col': 2, 'text': '', 'row': 4}, {'col': 0, 'text': '06 JUN', 'row': 5}, {'col': 1, 'text': '', 'row': 5}, {'col': 2, 'text': '', 'row': 5}, {'col': 0, 'text': '07 JUL', 'row': 6}, {'col': 1, 'text': '', 'row': 6}, {'col': 2, 'text': '', 'row': 6}, {'col': 0, 'text': '08 AUG', 'row': 7}, {'col': 1, 'text': '', 'row': 7}, {'col': 2, 'text': '', 'row': 7}]}]
+
+                        END OF CONTEXT 1
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 2 : [
+                        BEGIN OF CONTEXT 2
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/calendar.jsp?cYear=2025&hakGi=1
+
+                            [TEXT]
+                            
+title: 2025-1학기 등록금 납부 기한 2월 21(금)~27(목)
+    
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 2
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 3 : [
+                        BEGIN OF CONTEXT 3
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=242357&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [공통총무처 재무회계팀] title: '2025-1학기 전문/특수대학원 신입생 등록안내' date: 2024.12.26 
+ - 2025-1학기 전문/특수대학원 신입생 등록안내 - * 외국인의 경우 자율경비 선택기간 및 등록금 납부기간이 상이하니 유의하여 등록하시기 바랍니다. - 1. 등록금 납부 기간 - 가. 대한민국 국적자:  2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나. 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 2. 자율경비 - 가. 선택기간 - 1) 대한민국 국적자: 2025. 2. 3.(월) 09:30 ~ 2. 5.(수) 12:00 - 2) 외국 국적자(Foreign students): 2025. 1. 7.(화) 09:30 ~ 1. 8.(수) 16:00 - 나.경영전문대학원, 국제학대학원 및 특수대학원 신입생은 자율경비 선택 없음 - 다. 선택방법:연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인 [ID: 수험번호(대문자), Password: 주민번호 앞 6자리] - → 학사행정 → 등록 → 자율경비 선택 → 납부하고자 하는 항목 클릭 → 동의문구 입력 → 맨 아래 하단에 ‘확정’ 버튼 클릭 - (확정버튼을 누르지 않으면 선택되지 않으며,확정 후 변경은 불가함.) - 라. 납부방법:등록금 납부기간에 등록금과 함께 일괄 납부 - 마. 유의사항 - 1) 자율경비 선택 및 수정은선택기간중에만 가능함 - 2) 자율경비 선택 내역을 ‘임시저장’한 경우에는 수정 가능하나,‘확정’ 버튼을 클릭한 후에는 수정이 일체 불가함 - 3. 등록금 조회 및 고지서 출력 - 가. 대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나. 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 다. 고지서 출력방법 :연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인[ID:수험번호(대문자), Password: 주민번호 앞 6자리] → 학사행정 → 등록 → 등록금고지서출력 - (등록금 납부메뉴 사용안내 참고) - 라. 유의 사항 - 1) 등록금 고지서는정해진 조회 기간에만 조회 및 발급 가능 - 2)등록금 납부 후에는 어떠한 방법으로도 고지서 출력이 불가(필요 시 납부하기 전 출력) - 4. 납부방법 - 가. 우리은행 입금전용계좌(가상계좌)로의 계좌이체 납부 - 1) 전체 금융기관을 이용하여 고지서에 명시된 입금 전용 계좌로전액 일괄 입금 - - 입금전용계좌(가상계좌)는학생 1인당 1계좌를 부여함 - - 학생 본인이 아닌 타인 명의로 입금하여도 (=입금자 이름이 달라도) 해당 입금전용계좌로 입금하면자동으로 즉시 등록 처리됨. - - 입금 금액이 일치하지 않으면 납부가 불가하므로고지서 금액을 정확히 한번에 입금하여야 함 - 2) 납부방법: 인터넷뱅킹, 폰뱅킹, ATM이체, 창구납부 등 모두 가능 - 3) 유의사항 - 가) 우리은행 외 타 은행을 이용할 경우 송금수수료가 발생할 수 있음 - 나) CMA 통장 등 제 2금융권 일부 계좌에서는 송금이 불가할 수 있음 - 다)금액 분할 납부는 불가하므로 본인의 이체 한도를 사전에 확인 바람 - 라)납부 방법 변경(계좌이체→신용카드) 등을 위한 납입금 반환은 불가함 - 나. 신용카드 납부 - 1) 사용 가능 카드:‘우리 신용카드’ (타사 카드 불가, 체크카드 및 법인카드 사용 불가) - 2) 납부 방법 - 가) 우리카드 홈페이지: 홈페이지 접속(http://card.wooribank.com) – 라이프 – 납부서비스 – 대학등록금 메뉴 - 나) 우리카드 고객센터: 1588-9955, 1599-9955 - 다) 우리은행 전국지점 방문 - 3) 유의사항 - 가) 신용카드 납부 시납부 후 4시간 이후에 연세포탈에 등록 반영됩니다. - 나) 카드 납부는 전액 결제 시 가능하며,분할 결제 및 일부 결제는 불가함 - 다) 본인 명의의 카드가 아니어도 납부 가능하며, 취소는 납부 당일에만 가능 (카드사 문의) - 라) 할부서비스 이용 가능하며, 이자 등 자세한 사항은 카드사로 문의 - 마) 등록금 카드 결제 금액은연말정산 소득공제 시 카드 사용금액에서 제외됨 - 5. 등록금 납부 확인 - 가. 연세대학교 학사포탈(http://portal.yonsei.ac.kr)에 접속 → 로그인 → 학사행정 → 등록 → 등록금납부확인서 출력→ 해당 학년도학기 선택 → 국문/영문선택 → 출력 - 연세대학교 총무처 재무·회계팀
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 3
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 4 : [
+                        BEGIN OF CONTEXT 4
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=242355&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [공통총무처 재무회계팀] title: '2025-1학기 일반대학원 신입생 등록안내' date: 2024.12.26 
+ - 2025-1학기 일반대학원 신입생 등록안내 - * 외국인의 경우 자율경비 선택기간 및 등록금 납부기간이 상이하니 유의하여 등록하시기 바랍니다. - 1. 등록금 납부 기간 - 가.대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나.외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 2. 자율경비 - 가. 선택기간 - 1) 대한민국 국적자: 2025. 2. 3.(월) 09:30 ~ 2. 5.(수) 12:00 - 2) 외국 국적자(Foreign students): 2025. 1. 7.(화) 09:30 ~ 1. 8.(수) 16:00 - 나. 선택방법:연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인 [ID: 수험번호(대문자), Password: 주민번호 앞 6자리] - → 학사행정 → 등록 → 자율경비 선택 → 납부하고자 하는 항목 클릭 → 동의문구 입력 → 맨 아래 하단에 ‘확정’ 버튼 클릭 - (확정버튼을 누르지 않으면 선택되지 않으며,확정 후 변경은 불가함.) - 다. 납부방법:등록금 납부기간에 등록금과 함께 일괄 납부 - 라. 유의사항 - 1) 자율경비 선택 및 수정은선택기간중에만 가능함 - 2) 자율경비 선택 내역을 ‘임시저장’한 경우에는 수정 가능하나,‘확정’ 버튼을 클릭한 후에는 수정이 일체 불가함 - 3. 등록금 조회 및 고지서 출력 - 가. 등록금 고지서 출력 가능 기간: - 1) 대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 2) 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 나. 고지서 출력방법 : 연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인[ID:수험번호(대문자), Password: 주민번호 앞 6자리] → 학사행정 → 등록 → 등록금고지서출력(등록금 납부메뉴 사용안내 참고) - 다. 유의 사항 - 1) 등록금 고지서는정해진 조회 기간에만 조회 및 발급 가능 - 2)등록금 납부 후에는 어떠한 방법으로도 고지서 출력이 불가(필요 시 납부하기 전 출력) - 4. 납부방법 - 가. 우리은행 입금전용계좌(가상계좌)로의 계좌이체 납부 - 1) 전체 금융기관을 이용하여 고지서에 명시된 입금 전용 계좌로전액 일괄 입금 - - 입금전용계좌(가상계좌)는학생 1인당 1계좌를 부여함 - - 학생 본인이 아닌 타인 명의로 입금하여도 (=입금자 이름이 달라도) 해당 입금전용계좌로 입금하면자동으로 즉시 등록 처리됨. - - 입금 금액이 일치하지 않으면 납부가 불가하므로고지서 금액을 정확히 한번에 입금하여야 함 - 2) 납부방법: 인터넷뱅킹, 폰뱅킹, ATM이체, 창구납부 등 모두 가능 - 3) 유의사항 - 가) 우리은행 외 타 은행을 이용할 경우 송금수수료가 발생할 수 있음 - 나) CMA 통장 등 제 2금융권 일부 계좌에서는 송금이 불가할 수 있음 - 다)금액 분할 납부는 불가하므로 본인의 이체 한도를 사전에 확인 바람 - 라)납부 방법 변경(계좌이체→신용카드) 등을 위한 납입금 반환은 불가함 - 나. 신용카드 납부 - 1) 사용 가능 카드:‘우리 신용카드’ (타사 카드 불가, 체크카드 및 법인카드 사용 불가) - 2) 납부 방법 - 가) 우리카드 홈페이지: 홈페이지 접속(http://card.wooribank.com) – 라이프 – 납부서비스 – 대학등록금 메뉴 - 나) 우리카드 고객센터: 1588-9955, 1599-9955 - 다) 우리은행 전국지점 방문 - 3) 유의사항 - 가) 신용카드 납부 시납부 후 4시간 이후에 연세포탈에 등록 반영됩니다. - 나) 카드 납부는 전액 결제 시 가능하며,분할 결제 및 일부 결제는 불가함 - 다) 본인 명의의 카드가 아니어도 납부 가능하며, 취소는 납부 당일에만 가능 (카드사 문의) - 라) 할부서비스 이용 가능하며, 이자 등 자세한 사항은 카드사로 문의 - 마) 등록금 카드 결제 금액은연말정산 소득공제 시 카드 사용금액에서 제외됨 - 5. 등록금 납부 확인 - 가. 등록금 납부확인서 출력방법 :  연세대학교 학사포탈(http://portal.yonsei.ac.kr)에 접속 → 로그인 → 학사행정 → 등록 → 등록금납부확인서 출력→ 해당 학년도학기 선택 → 국문/영문선택 → 출력 - 연세대학교 총무처 재무·회계팀
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 4
+                        ]
+                        --------------------
+                        
+2025-02-20 12:51:09,391:INFO:
+이전 대화 : 
+
+2025-02-20 12:51:09,391:INFO:메시지 구성 완료
+2025-02-20 12:51:09,391:INFO:OpenAI API 호출 시작
+2025-02-20 12:51:14,597:INFO:OpenAI API 초기 응답 수신 (시간: 5.205490초)
+2025-02-20 12:51:18,263:INFO:=== 응답 처리 결과 ===
+2025-02-20 12:51:18,264:INFO:대화 #1 기록됨:
+{
+  "id": 1,
+  "original_query": "2025-1 학부 등록금 납부 일정",
+  "rewritten_query": "2025-1 학부 등록금 납부 일정",
+  "response": "2025-1 학부 등록금 납부 일정은 다음과 같습니다:\n\n- **등록금 납부 기간**: 2025년 2월 21일(금) ~ 2월 27일(목)입니다.\n\n자세한 사항은 연세대학교 공식 웹사이트를 참고하시기 바랍니다. \n",
+  "timestamp": 1740055878.2643197
+}
+2025-02-20 12:51:26,722:INFO:[세션 ylvq50ucek-ip hash:12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36] 
+ 사용자 쿼리: 2025-1학기 추가등록 언제야?
+2025-02-20 12:51:26,723:INFO:선택된 검색 방법: ISAAC Basic - 균형 잡힌 검색
+2025-02-20 12:51:26,723:INFO:새 검색 설정으로 업데이트: {'search_method': 'ISAAC Basic - 균형 잡힌 검색'}
+2025-02-20 12:51:26,725:INFO:감지된 언어: ko
+2025-02-20 12:51:26,725:INFO:새로운 쿼리 수신: 2025-1학기 추가등록 언제야? (언어: ko)
+2025-02-20 12:51:26,727:INFO:쿼리 상태 확인 완료
+2025-02-20 12:51:26,728:INFO:=== 병렬 쿼리 처리 시작 ===
+2025-02-20 12:51:26,729:INFO:=== 주제어 추출 시작 ===
+2025-02-20 12:51:26,729:INFO:분석할 쿼리: 2025-1학기 추가등록 언제야?
+2025-02-20 12:51:26,729:INFO:매칭되는 키워드가 없습니다. 빈 토픽으로 즉시 반환합니다.
+2025-02-20 12:51:26,730:INFO:=== Query Rewrite Process Started ===
+2025-02-20 12:51:26,730:INFO:Current Query: 2025-1학기 추가등록 언제야?
+2025-02-20 12:51:26,730:INFO:Query History Count: 1
+2025-02-20 12:51:26,741:INFO:Query '2025-1학기 추가등록 언제야?' already exists in the embeddings file.
+2025-02-20 12:51:26,742:INFO:병렬 처리 완료 - 최종 토픽: []
+2025-02-20 12:51:26,744:INFO:=== 병렬 문서 검색 시작 ===
+2025-02-20 12:51:26,744:INFO:=== 문서 검색 시작 ===
+2025-02-20 12:51:26,754:INFO:Query '2025-1학기 추가등록 언제야?' already exists in the embeddings file.
+2025-02-20 12:51:26,790:INFO:
+ 
+ response : <Response [200]>
+2025-02-20 12:51:26,791:INFO:검색된 총 문서 수: 5 (공지사항: 0, 일반문서: 5)
+2025-02-20 12:51:26,792:INFO:AI를 위한 컨텍스트 텍스트 생성 시작.
+2025-02-20 12:51:26,792:INFO:컨텍스트 텍스트 생성 완료.
+2025-02-20 12:51:26,792:INFO:생성된 컨텍스트 텍스트 내용: 
+                        --------------------
+                        CONTEXT 0 : [
+                        BEGIN OF CONTEXT 0
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/calendar.jsp?cYear=2025&hakGi=1
+
+                            [TEXT]
+                            
+    title : {
+  "2025년도 1학기 등록 및 추가등록 일정": {
+    "02 FEB": [
+      { "날짜": "21(금)~27(목)", "내용": "2025-1학기 등록" },
+    ],
+    "03 MAR": [
+      { "날짜": "12(수)~14(금)", "내용": "2025-1학기 추가등록" },
+    ],
+}
+
+    
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 0
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 1 : [
+                        BEGIN OF CONTEXT 1
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/calendar.jsp?cYear=2025&hakGi=1
+
+                            [TEXT]
+                            
+    title : {
+  "2025년도 1학기 개강, 수강신청 확인, 추가등록 일정": {
+    "03 MAR": [
+      { "날짜": "4(화)", "내용": "개강" },
+      { "날짜": "6(목)~10(월)", "내용": "수강신청 확인 및 변경" },
+      { "날짜": "12(수)~14(금)", "내용": "2025-1학기 추가등록" },
+}
+
+    
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 1
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 2 : [
+                        BEGIN OF CONTEXT 2
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=242355&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [공통총무처 재무회계팀] title: '2025-1학기 일반대학원 신입생 등록안내' date: 2024.12.26 
+ - 2025-1학기 일반대학원 신입생 등록안내 - * 외국인의 경우 자율경비 선택기간 및 등록금 납부기간이 상이하니 유의하여 등록하시기 바랍니다. - 1. 등록금 납부 기간 - 가.대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나.외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 2. 자율경비 - 가. 선택기간 - 1) 대한민국 국적자: 2025. 2. 3.(월) 09:30 ~ 2. 5.(수) 12:00 - 2) 외국 국적자(Foreign students): 2025. 1. 7.(화) 09:30 ~ 1. 8.(수) 16:00 - 나. 선택방법:연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인 [ID: 수험번호(대문자), Password: 주민번호 앞 6자리] - → 학사행정 → 등록 → 자율경비 선택 → 납부하고자 하는 항목 클릭 → 동의문구 입력 → 맨 아래 하단에 ‘확정’ 버튼 클릭 - (확정버튼을 누르지 않으면 선택되지 않으며,확정 후 변경은 불가함.) - 다. 납부방법:등록금 납부기간에 등록금과 함께 일괄 납부 - 라. 유의사항 - 1) 자율경비 선택 및 수정은선택기간중에만 가능함 - 2) 자율경비 선택 내역을 ‘임시저장’한 경우에는 수정 가능하나,‘확정’ 버튼을 클릭한 후에는 수정이 일체 불가함 - 3. 등록금 조회 및 고지서 출력 - 가. 등록금 고지서 출력 가능 기간: - 1) 대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 2) 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 나. 고지서 출력방법 : 연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인[ID:수험번호(대문자), Password: 주민번호 앞 6자리] → 학사행정 → 등록 → 등록금고지서출력(등록금 납부메뉴 사용안내 참고) - 다. 유의 사항 - 1) 등록금 고지서는정해진 조회 기간에만 조회 및 발급 가능 - 2)등록금 납부 후에는 어떠한 방법으로도 고지서 출력이 불가(필요 시 납부하기 전 출력) - 4. 납부방법 - 가. 우리은행 입금전용계좌(가상계좌)로의 계좌이체 납부 - 1) 전체 금융기관을 이용하여 고지서에 명시된 입금 전용 계좌로전액 일괄 입금 - - 입금전용계좌(가상계좌)는학생 1인당 1계좌를 부여함 - - 학생 본인이 아닌 타인 명의로 입금하여도 (=입금자 이름이 달라도) 해당 입금전용계좌로 입금하면자동으로 즉시 등록 처리됨. - - 입금 금액이 일치하지 않으면 납부가 불가하므로고지서 금액을 정확히 한번에 입금하여야 함 - 2) 납부방법: 인터넷뱅킹, 폰뱅킹, ATM이체, 창구납부 등 모두 가능 - 3) 유의사항 - 가) 우리은행 외 타 은행을 이용할 경우 송금수수료가 발생할 수 있음 - 나) CMA 통장 등 제 2금융권 일부 계좌에서는 송금이 불가할 수 있음 - 다)금액 분할 납부는 불가하므로 본인의 이체 한도를 사전에 확인 바람 - 라)납부 방법 변경(계좌이체→신용카드) 등을 위한 납입금 반환은 불가함 - 나. 신용카드 납부 - 1) 사용 가능 카드:‘우리 신용카드’ (타사 카드 불가, 체크카드 및 법인카드 사용 불가) - 2) 납부 방법 - 가) 우리카드 홈페이지: 홈페이지 접속(http://card.wooribank.com) – 라이프 – 납부서비스 – 대학등록금 메뉴 - 나) 우리카드 고객센터: 1588-9955, 1599-9955 - 다) 우리은행 전국지점 방문 - 3) 유의사항 - 가) 신용카드 납부 시납부 후 4시간 이후에 연세포탈에 등록 반영됩니다. - 나) 카드 납부는 전액 결제 시 가능하며,분할 결제 및 일부 결제는 불가함 - 다) 본인 명의의 카드가 아니어도 납부 가능하며, 취소는 납부 당일에만 가능 (카드사 문의) - 라) 할부서비스 이용 가능하며, 이자 등 자세한 사항은 카드사로 문의 - 마) 등록금 카드 결제 금액은연말정산 소득공제 시 카드 사용금액에서 제외됨 - 5. 등록금 납부 확인 - 가. 등록금 납부확인서 출력방법 :  연세대학교 학사포탈(http://portal.yonsei.ac.kr)에 접속 → 로그인 → 학사행정 → 등록 → 등록금납부확인서 출력→ 해당 학년도학기 선택 → 국문/영문선택 → 출력 - 연세대학교 총무처 재무·회계팀
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 2
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 3 : [
+                        BEGIN OF CONTEXT 3
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=241794&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [신촌/국제총무처 재무회계팀] title: '2025-1 학부/일반대학원 등록금 분할납부 신청안내(Tuition Installment Plan for Undergrad & General Grad)' date: 2024.12.17 
+ - <2025-1학기 학부 및 일반대학원 등록금 분할납부 신청안내> - [신청 기간] - ▶ 2024. 12. 24.(화) ~ 2025. 2. 6.(목) (기간 종료 후 신청 불가) - [분할납부 불가대상] - 1. 2025-1학기 신입생, 편입생, 재입학생 (첫 학기) - 2. 정부학자금 대출 신청자 (분할납부 1차 금액 납부 후에는 분납 취소 후 학자금 대출로의 전환 불가) - 3. 대학원 계약학과 학생 및 신청학점 없는 연구지도 신청자 (등록금의 12/100납부자) - 4. 직전학기 분납 미납자 - 5. 4회 신청자 중 등록금의 3/4이상 장학 수혜자 및 학기초과 감면을 받는자 - 6. 2회 신청자 중 등록금의 1/2이상 장학 수혜자 및 학기초과 감면을 받는자 - [신청 및 변경 절차] - 학사포탈(portal.yonsei.ac.kr) → 로그인 → 학사행정 → 등록 → 분할납부신청 - [분할납부 기간 및 방법] - * 마감시간(마지막 날짜 17시 정각) 이후 납부 불가하며, 분납이 취소되오니 유의 바랍니다. - [유의사항] - ▶ 분할납부 신청 시, 등록금신용카드 납부 불가함(분납을 취소해도 신용카드 납부로의 전환 불가) - ▶ 복학예정자는 복학신청 이전이라도 분할납부를 원할 경우 미리 신청해야 함 - ▶ 1차 납부 기간에 미납 시 자동으로 분납 신청이 취소되며,추가등록 기간(2025. 3. 12. ~ 3. 14.)에 등록금 전액을 납부해야 함 - ▶각 차수별분납액 미납 시 분납은 자동으로 취소되며 잔액 전액을 즉시 납부하여야 함. 잔액 납부 미이행 시에는 미등록으로 간주되며 학칙에 따라 학기 이수가 불가함 (이월 납부 불가) - ▶ 분납 신청기간 마감 후 분납을 취소하거나, 분할납부 미납 발생 시에는다음학기 분납 신청이 제한됨 - ▶ 학기초과자, 장학금 수혜자의 경우 납부 금액 확인 - - 분할납부 금액은전공별 수업료총액을 기준으로 계산(본인의 납부 금액 기준이 아님) - - 감면액 및 장학금액은 분할납부마지막 회차부터 차감되어 적용 - 예1) 장학: 등록금 4,120,000원, 분할납부 4회 신청자가 100만원 장학금 수령 시(납부총액 3,120,000원) - - 1차: 1,030,000원 납부/ 2차: 1,030,000원 납부/ 3차: 1,030,000원 납부, 4차: 30,000원 납부 - 예2) 학기초과자: 등록금 3,600,000원, 분할납부 4회 신청자가 2/3 감면 받는 경우 (납부총액 1,200,000원) - - 1차(본등록기간): 900,000원 납부 / 2차: 300,000원 납부/ 3, 4차: 납부 금액 없음 - ▶ 외화송금의 경우 등록기간 중 납부가 되도록 하며 수수료 등을 감안하여 납부할 것 (차액은 추후 반환됨) - ▶신청이 완료되면 신청화면 상단에신청일자 및 시간이 붉은색으로 표시되니 필히 확인요망 - ▶ 분할납부 신청은 지정된 기간만 가능하며 조건 미달 시 분납신청이 자동으로 취소됨 - ※ 홈페이지 [학사지원] – [등록금] - [등록금납부/반환] - [분할납부]에서 자세한 사항 확인 - ※ 문의사항: 재무회계팀 02-2123-4500 (fiwebmaster@yonsei.ac.kr) - 연 세 대 학 교 총 무 처 장 - <2025 1st Semester Instruction of Tuition Installment Plan(TIP) for Undergraduate and General graduate school> - [Application period] - ▶ 2024. 12. 24.(Tue.) ~ 2025. 2. 6.(Thr.)(Application is available during the given peirod ONLY.) - [StudentsNOTqualified for TIP] - ▶ Freshmen, Re-admitted students, Transfer students for 2025Spring Semester (only the first semester) - ▶ Students who have applied for a government guaranteed students loan - ▶ Students who have applied for research guidance without registered credit (12/100 payment) - ▶ Students who failed to make one of payments during the last semester’s tuition installment plan - ▶ For 4 installment, scholarship or extra semester reduction of an amount greater than 3/4 of tuition. - ▶ For 2 installment, scholarship or extra semester reduction of an amount greater than 1/2 of tuition. - [Application and change procedures] - ▶ Visit Yonsei portal system (http://portal.yonsei.ac.kr/main/indexe.jsp) → Academic information →Registration → Application for Installment Payment - [Periods and methods of TIP] - * Please keep in mind that deadline for each payment is 17:00 on last day of each period - [Please Note] - ▶ Credit card payments areNOTavailable for TIP applicants - ▶ Students returning to school can apply for the installment payment plan before applying to return. - ▶ If the 1st payment is not made properly, the TIP will beautomatically canceled,and the full tuition must be paid during the additional application period (2025. 3. 12. ~ 3. 14.) - ▶If the TIP is not paid properly, the TIP will be automatically canceled, and the full remaining balance must be paid immediately.If the balance is not paid, it’s considered unregistered and the semester cannot be completed according to the school regulations (NOT CARRIED OVER TO NEXT PAYMENT) - ▶ Overseas remittance must beconfirmed within scheduled payment period.Consider bank charges and exchange rateswhen sending from overseas. (The full amount must be confirmed) Overpaid tuition will be returned to the bank account registered at Yonsei Portal. - ▶ If the TIP is not paid on time, the application for TIP for the next semester is restricted. - ▶If the application is completed, the date and time of application will be displayed on the screen - ▶ Applications for installment payment can only be made during the designated period and if not qualified, it will be canceled without notice. - ▶ If there’s reduction (taking extra semester or receiving scholarships), the amount of TIP is calculated on the basis offull tuitionand the amount of reduction will be deducted from the final payment - case) Tuition: KRW 4,120,000, 4 installment, KRW 1,000,000 scholarship (Sum payment: KRW 3,120,000) - - You need to pay for 1st, 2nd, 3rd : KRW 1,030,000, 4th: KRW 30,000 - Vice President for General Affairs,Yonsei University
+
+                            [TABLES]
+                            [{'table': [{'col': 0, 'text': '구분', 'row': 0}, {'colspan': 2, 'col': 1, 'text': '등록금 납부 기간', 'row': 0}, {'col': 3, 'text': '등록금액', 'row': 0}, {'col': 4, 'text': '등록방법', 'row': 0}, {'col': 0, 'rowspan': 2, 'text': '2회 신청', 'row': 1}, {'col': 1, 'text': '1차', 'row': 1}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 1}, {'col': 3, 'text': '전공별 수업료의 50%+자율경비', 'row': 1}, {'col': 4, 'rowspan': 6, 'text': '우리은행가상 계좌 입금(신용카드납부 불가)', 'row': 1}, {'col': 1, 'text': '2차', 'row': 2}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 2}, {'col': 3, 'text': '전공별 수업료의 50%', 'row': 2}, {'col': 0, 'rowspan': 4, 'text': '4회 신청', 'row': 3}, {'col': 1, 'text': '1차', 'row': 3}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 3}, {'col': 3, 'text': '전공별 수업료의 25%+자율경비', 'row': 3}, {'col': 1, 'text': '2차', 'row': 4}, {'col': 2, 'text': '2025. 3. 18. ~ 3. 21. 17:00', 'row': 4}, {'col': 3, 'rowspan': 3, 'text': '전공별 수업료의 25%', 'row': 4}, {'col': 1, 'text': '3차', 'row': 5}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 5}, {'col': 1, 'text': '4차', 'row': 6}, {'col': 2, 'text': '2025. 4. 25. ~ 4. 28. 17:00', 'row': 6}]}, {'table': [{'col': 0, 'text': 'Installment', 'row': 0}, {'colspan': 2, 'col': 1, 'text': 'Registration Period', 'row': 0}, {'col': 3, 'text': 'Tuition', 'row': 0}, {'col': 4, 'text': 'Method', 'row': 0}, {'col': 0, 'rowspan': 2, 'text': '2Installments', 'row': 1}, {'col': 1, 'text': '1st', 'row': 1}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 1}, {'col': 3, 'text': '50% of tuition + Miscellaneous fees', 'row': 1}, {'col': 4, 'rowspan': 6, 'text': 'Deposit in Woori Bank virtual account(Credit card is NOT available)', 'row': 1}, {'col': 1, 'text': '2nd', 'row': 2}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 2}, {'col': 3, 'text': '50% of tuition', 'row': 2}, {'col': 0, 'rowspan': 4, 'text': '4Installments', 'row': 3}, {'col': 1, 'text': '1st', 'row': 3}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 3}, {'col': 3, 'text': '25% of tuition + Miscellaneous fees', 'row': 3}, {'col': 1, 'text': '2nd', 'row': 4}, {'col': 2, 'text': '2025. 3. 18. ~ 3. 21. 17:00', 'row': 4}, {'col': 3, 'rowspan': 3, 'text': '25% of tuition', 'row': 4}, {'col': 1, 'text': '3rd', 'row': 5}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 5}, {'col': 1, 'text': '4th', 'row': 6}, {'col': 2, 'text': '2025. 4. 25. ~ 4. 28. 17:00', 'row': 6}]}]
+
+                        END OF CONTEXT 3
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 4 : [
+                        BEGIN OF CONTEXT 4
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=242357&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [공통총무처 재무회계팀] title: '2025-1학기 전문/특수대학원 신입생 등록안내' date: 2024.12.26 
+ - 2025-1학기 전문/특수대학원 신입생 등록안내 - * 외국인의 경우 자율경비 선택기간 및 등록금 납부기간이 상이하니 유의하여 등록하시기 바랍니다. - 1. 등록금 납부 기간 - 가. 대한민국 국적자:  2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나. 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 2. 자율경비 - 가. 선택기간 - 1) 대한민국 국적자: 2025. 2. 3.(월) 09:30 ~ 2. 5.(수) 12:00 - 2) 외국 국적자(Foreign students): 2025. 1. 7.(화) 09:30 ~ 1. 8.(수) 16:00 - 나.경영전문대학원, 국제학대학원 및 특수대학원 신입생은 자율경비 선택 없음 - 다. 선택방법:연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인 [ID: 수험번호(대문자), Password: 주민번호 앞 6자리] - → 학사행정 → 등록 → 자율경비 선택 → 납부하고자 하는 항목 클릭 → 동의문구 입력 → 맨 아래 하단에 ‘확정’ 버튼 클릭 - (확정버튼을 누르지 않으면 선택되지 않으며,확정 후 변경은 불가함.) - 라. 납부방법:등록금 납부기간에 등록금과 함께 일괄 납부 - 마. 유의사항 - 1) 자율경비 선택 및 수정은선택기간중에만 가능함 - 2) 자율경비 선택 내역을 ‘임시저장’한 경우에는 수정 가능하나,‘확정’ 버튼을 클릭한 후에는 수정이 일체 불가함 - 3. 등록금 조회 및 고지서 출력 - 가. 대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나. 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 다. 고지서 출력방법 :연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인[ID:수험번호(대문자), Password: 주민번호 앞 6자리] → 학사행정 → 등록 → 등록금고지서출력 - (등록금 납부메뉴 사용안내 참고) - 라. 유의 사항 - 1) 등록금 고지서는정해진 조회 기간에만 조회 및 발급 가능 - 2)등록금 납부 후에는 어떠한 방법으로도 고지서 출력이 불가(필요 시 납부하기 전 출력) - 4. 납부방법 - 가. 우리은행 입금전용계좌(가상계좌)로의 계좌이체 납부 - 1) 전체 금융기관을 이용하여 고지서에 명시된 입금 전용 계좌로전액 일괄 입금 - - 입금전용계좌(가상계좌)는학생 1인당 1계좌를 부여함 - - 학생 본인이 아닌 타인 명의로 입금하여도 (=입금자 이름이 달라도) 해당 입금전용계좌로 입금하면자동으로 즉시 등록 처리됨. - - 입금 금액이 일치하지 않으면 납부가 불가하므로고지서 금액을 정확히 한번에 입금하여야 함 - 2) 납부방법: 인터넷뱅킹, 폰뱅킹, ATM이체, 창구납부 등 모두 가능 - 3) 유의사항 - 가) 우리은행 외 타 은행을 이용할 경우 송금수수료가 발생할 수 있음 - 나) CMA 통장 등 제 2금융권 일부 계좌에서는 송금이 불가할 수 있음 - 다)금액 분할 납부는 불가하므로 본인의 이체 한도를 사전에 확인 바람 - 라)납부 방법 변경(계좌이체→신용카드) 등을 위한 납입금 반환은 불가함 - 나. 신용카드 납부 - 1) 사용 가능 카드:‘우리 신용카드’ (타사 카드 불가, 체크카드 및 법인카드 사용 불가) - 2) 납부 방법 - 가) 우리카드 홈페이지: 홈페이지 접속(http://card.wooribank.com) – 라이프 – 납부서비스 – 대학등록금 메뉴 - 나) 우리카드 고객센터: 1588-9955, 1599-9955 - 다) 우리은행 전국지점 방문 - 3) 유의사항 - 가) 신용카드 납부 시납부 후 4시간 이후에 연세포탈에 등록 반영됩니다. - 나) 카드 납부는 전액 결제 시 가능하며,분할 결제 및 일부 결제는 불가함 - 다) 본인 명의의 카드가 아니어도 납부 가능하며, 취소는 납부 당일에만 가능 (카드사 문의) - 라) 할부서비스 이용 가능하며, 이자 등 자세한 사항은 카드사로 문의 - 마) 등록금 카드 결제 금액은연말정산 소득공제 시 카드 사용금액에서 제외됨 - 5. 등록금 납부 확인 - 가. 연세대학교 학사포탈(http://portal.yonsei.ac.kr)에 접속 → 로그인 → 학사행정 → 등록 → 등록금납부확인서 출력→ 해당 학년도학기 선택 → 국문/영문선택 → 출력 - 연세대학교 총무처 재무·회계팀
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 4
+                        ]
+                        --------------------
+                        ...
+
+2025-02-20 12:51:26,794:INFO:=== 가상 응답 생성 노드 도달 ===
+2025-02-20 12:51:26,795:INFO:=== 응답 생성 시작 ===
+2025-02-20 12:51:26,796:INFO:입력 쿼리: 2025-1학기 추가등록 언제야?
+2025-02-20 12:51:26,796:INFO:입력 컨텍스트: 
+                        --------------------
+                        CONTEXT 0 : [
+                        BEGIN OF CONTEXT 0
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/calendar.jsp?cYear=2025&hakGi=1
+
+                            [TEXT]
+                            
+    title : {
+  "2025년도 1학기 등록 및 추가등록 일정": {
+    "02 FEB": [
+      { "날짜": "21(금)~27(목)", "내용": "2025-1학기 등록" },
+    ],
+    "03 MAR": [
+      { "날짜": "12(수)~14(금)", "내용": "2025-1학기 추가등록" },
+    ],
+}
+
+    
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 0
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 1 : [
+                        BEGIN OF CONTEXT 1
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/calendar.jsp?cYear=2025&hakGi=1
+
+                            [TEXT]
+                            
+    title : {
+  "2025년도 1학기 개강, 수강신청 확인, 추가등록 일정": {
+    "03 MAR": [
+      { "날짜": "4(화)", "내용": "개강" },
+      { "날짜": "6(목)~10(월)", "내용": "수강신청 확인 및 변경" },
+      { "날짜": "12(수)~14(금)", "내용": "2025-1학기 추가등록" },
+}
+
+    
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 1
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 2 : [
+                        BEGIN OF CONTEXT 2
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=242355&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [공통총무처 재무회계팀] title: '2025-1학기 일반대학원 신입생 등록안내' date: 2024.12.26 
+ - 2025-1학기 일반대학원 신입생 등록안내 - * 외국인의 경우 자율경비 선택기간 및 등록금 납부기간이 상이하니 유의하여 등록하시기 바랍니다. - 1. 등록금 납부 기간 - 가.대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나.외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 2. 자율경비 - 가. 선택기간 - 1) 대한민국 국적자: 2025. 2. 3.(월) 09:30 ~ 2. 5.(수) 12:00 - 2) 외국 국적자(Foreign students): 2025. 1. 7.(화) 09:30 ~ 1. 8.(수) 16:00 - 나. 선택방법:연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인 [ID: 수험번호(대문자), Password: 주민번호 앞 6자리] - → 학사행정 → 등록 → 자율경비 선택 → 납부하고자 하는 항목 클릭 → 동의문구 입력 → 맨 아래 하단에 ‘확정’ 버튼 클릭 - (확정버튼을 누르지 않으면 선택되지 않으며,확정 후 변경은 불가함.) - 다. 납부방법:등록금 납부기간에 등록금과 함께 일괄 납부 - 라. 유의사항 - 1) 자율경비 선택 및 수정은선택기간중에만 가능함 - 2) 자율경비 선택 내역을 ‘임시저장’한 경우에는 수정 가능하나,‘확정’ 버튼을 클릭한 후에는 수정이 일체 불가함 - 3. 등록금 조회 및 고지서 출력 - 가. 등록금 고지서 출력 가능 기간: - 1) 대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 2) 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 나. 고지서 출력방법 : 연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인[ID:수험번호(대문자), Password: 주민번호 앞 6자리] → 학사행정 → 등록 → 등록금고지서출력(등록금 납부메뉴 사용안내 참고) - 다. 유의 사항 - 1) 등록금 고지서는정해진 조회 기간에만 조회 및 발급 가능 - 2)등록금 납부 후에는 어떠한 방법으로도 고지서 출력이 불가(필요 시 납부하기 전 출력) - 4. 납부방법 - 가. 우리은행 입금전용계좌(가상계좌)로의 계좌이체 납부 - 1) 전체 금융기관을 이용하여 고지서에 명시된 입금 전용 계좌로전액 일괄 입금 - - 입금전용계좌(가상계좌)는학생 1인당 1계좌를 부여함 - - 학생 본인이 아닌 타인 명의로 입금하여도 (=입금자 이름이 달라도) 해당 입금전용계좌로 입금하면자동으로 즉시 등록 처리됨. - - 입금 금액이 일치하지 않으면 납부가 불가하므로고지서 금액을 정확히 한번에 입금하여야 함 - 2) 납부방법: 인터넷뱅킹, 폰뱅킹, ATM이체, 창구납부 등 모두 가능 - 3) 유의사항 - 가) 우리은행 외 타 은행을 이용할 경우 송금수수료가 발생할 수 있음 - 나) CMA 통장 등 제 2금융권 일부 계좌에서는 송금이 불가할 수 있음 - 다)금액 분할 납부는 불가하므로 본인의 이체 한도를 사전에 확인 바람 - 라)납부 방법 변경(계좌이체→신용카드) 등을 위한 납입금 반환은 불가함 - 나. 신용카드 납부 - 1) 사용 가능 카드:‘우리 신용카드’ (타사 카드 불가, 체크카드 및 법인카드 사용 불가) - 2) 납부 방법 - 가) 우리카드 홈페이지: 홈페이지 접속(http://card.wooribank.com) – 라이프 – 납부서비스 – 대학등록금 메뉴 - 나) 우리카드 고객센터: 1588-9955, 1599-9955 - 다) 우리은행 전국지점 방문 - 3) 유의사항 - 가) 신용카드 납부 시납부 후 4시간 이후에 연세포탈에 등록 반영됩니다. - 나) 카드 납부는 전액 결제 시 가능하며,분할 결제 및 일부 결제는 불가함 - 다) 본인 명의의 카드가 아니어도 납부 가능하며, 취소는 납부 당일에만 가능 (카드사 문의) - 라) 할부서비스 이용 가능하며, 이자 등 자세한 사항은 카드사로 문의 - 마) 등록금 카드 결제 금액은연말정산 소득공제 시 카드 사용금액에서 제외됨 - 5. 등록금 납부 확인 - 가. 등록금 납부확인서 출력방법 :  연세대학교 학사포탈(http://portal.yonsei.ac.kr)에 접속 → 로그인 → 학사행정 → 등록 → 등록금납부확인서 출력→ 해당 학년도학기 선택 → 국문/영문선택 → 출력 - 연세대학교 총무처 재무·회계팀
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 2
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 3 : [
+                        BEGIN OF CONTEXT 3
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=241794&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [신촌/국제총무처 재무회계팀] title: '2025-1 학부/일반대학원 등록금 분할납부 신청안내(Tuition Installment Plan for Undergrad & General Grad)' date: 2024.12.17 
+ - <2025-1학기 학부 및 일반대학원 등록금 분할납부 신청안내> - [신청 기간] - ▶ 2024. 12. 24.(화) ~ 2025. 2. 6.(목) (기간 종료 후 신청 불가) - [분할납부 불가대상] - 1. 2025-1학기 신입생, 편입생, 재입학생 (첫 학기) - 2. 정부학자금 대출 신청자 (분할납부 1차 금액 납부 후에는 분납 취소 후 학자금 대출로의 전환 불가) - 3. 대학원 계약학과 학생 및 신청학점 없는 연구지도 신청자 (등록금의 12/100납부자) - 4. 직전학기 분납 미납자 - 5. 4회 신청자 중 등록금의 3/4이상 장학 수혜자 및 학기초과 감면을 받는자 - 6. 2회 신청자 중 등록금의 1/2이상 장학 수혜자 및 학기초과 감면을 받는자 - [신청 및 변경 절차] - 학사포탈(portal.yonsei.ac.kr) → 로그인 → 학사행정 → 등록 → 분할납부신청 - [분할납부 기간 및 방법] - * 마감시간(마지막 날짜 17시 정각) 이후 납부 불가하며, 분납이 취소되오니 유의 바랍니다. - [유의사항] - ▶ 분할납부 신청 시, 등록금신용카드 납부 불가함(분납을 취소해도 신용카드 납부로의 전환 불가) - ▶ 복학예정자는 복학신청 이전이라도 분할납부를 원할 경우 미리 신청해야 함 - ▶ 1차 납부 기간에 미납 시 자동으로 분납 신청이 취소되며,추가등록 기간(2025. 3. 12. ~ 3. 14.)에 등록금 전액을 납부해야 함 - ▶각 차수별분납액 미납 시 분납은 자동으로 취소되며 잔액 전액을 즉시 납부하여야 함. 잔액 납부 미이행 시에는 미등록으로 간주되며 학칙에 따라 학기 이수가 불가함 (이월 납부 불가) - ▶ 분납 신청기간 마감 후 분납을 취소하거나, 분할납부 미납 발생 시에는다음학기 분납 신청이 제한됨 - ▶ 학기초과자, 장학금 수혜자의 경우 납부 금액 확인 - - 분할납부 금액은전공별 수업료총액을 기준으로 계산(본인의 납부 금액 기준이 아님) - - 감면액 및 장학금액은 분할납부마지막 회차부터 차감되어 적용 - 예1) 장학: 등록금 4,120,000원, 분할납부 4회 신청자가 100만원 장학금 수령 시(납부총액 3,120,000원) - - 1차: 1,030,000원 납부/ 2차: 1,030,000원 납부/ 3차: 1,030,000원 납부, 4차: 30,000원 납부 - 예2) 학기초과자: 등록금 3,600,000원, 분할납부 4회 신청자가 2/3 감면 받는 경우 (납부총액 1,200,000원) - - 1차(본등록기간): 900,000원 납부 / 2차: 300,000원 납부/ 3, 4차: 납부 금액 없음 - ▶ 외화송금의 경우 등록기간 중 납부가 되도록 하며 수수료 등을 감안하여 납부할 것 (차액은 추후 반환됨) - ▶신청이 완료되면 신청화면 상단에신청일자 및 시간이 붉은색으로 표시되니 필히 확인요망 - ▶ 분할납부 신청은 지정된 기간만 가능하며 조건 미달 시 분납신청이 자동으로 취소됨 - ※ 홈페이지 [학사지원] – [등록금] - [등록금납부/반환] - [분할납부]에서 자세한 사항 확인 - ※ 문의사항: 재무회계팀 02-2123-4500 (fiwebmaster@yonsei.ac.kr) - 연 세 대 학 교 총 무 처 장 - <2025 1st Semester Instruction of Tuition Installment Plan(TIP) for Undergraduate and General graduate school> - [Application period] - ▶ 2024. 12. 24.(Tue.) ~ 2025. 2. 6.(Thr.)(Application is available during the given peirod ONLY.) - [StudentsNOTqualified for TIP] - ▶ Freshmen, Re-admitted students, Transfer students for 2025Spring Semester (only the first semester) - ▶ Students who have applied for a government guaranteed students loan - ▶ Students who have applied for research guidance without registered credit (12/100 payment) - ▶ Students who failed to make one of payments during the last semester’s tuition installment plan - ▶ For 4 installment, scholarship or extra semester reduction of an amount greater than 3/4 of tuition. - ▶ For 2 installment, scholarship or extra semester reduction of an amount greater than 1/2 of tuition. - [Application and change procedures] - ▶ Visit Yonsei portal system (http://portal.yonsei.ac.kr/main/indexe.jsp) → Academic information →Registration → Application for Installment Payment - [Periods and methods of TIP] - * Please keep in mind that deadline for each payment is 17:00 on last day of each period - [Please Note] - ▶ Credit card payments areNOTavailable for TIP applicants - ▶ Students returning to school can apply for the installment payment plan before applying to return. - ▶ If the 1st payment is not made properly, the TIP will beautomatically canceled,and the full tuition must be paid during the additional application period (2025. 3. 12. ~ 3. 14.) - ▶If the TIP is not paid properly, the TIP will be automatically canceled, and the full remaining balance must be paid immediately.If the balance is not paid, it’s considered unregistered and the semester cannot be completed according to the school regulations (NOT CARRIED OVER TO NEXT PAYMENT) - ▶ Overseas remittance must beconfirmed within scheduled payment period.Consider bank charges and exchange rateswhen sending from overseas. (The full amount must be confirmed) Overpaid tuition will be returned to the bank account registered at Yonsei Portal. - ▶ If the TIP is not paid on time, the application for TIP for the next semester is restricted. - ▶If the application is completed, the date and time of application will be displayed on the screen - ▶ Applications for installment payment can only be made during the designated period and if not qualified, it will be canceled without notice. - ▶ If there’s reduction (taking extra semester or receiving scholarships), the amount of TIP is calculated on the basis offull tuitionand the amount of reduction will be deducted from the final payment - case) Tuition: KRW 4,120,000, 4 installment, KRW 1,000,000 scholarship (Sum payment: KRW 3,120,000) - - You need to pay for 1st, 2nd, 3rd : KRW 1,030,000, 4th: KRW 30,000 - Vice President for General Affairs,Yonsei University
+
+                            [TABLES]
+                            [{'table': [{'col': 0, 'text': '구분', 'row': 0}, {'colspan': 2, 'col': 1, 'text': '등록금 납부 기간', 'row': 0}, {'col': 3, 'text': '등록금액', 'row': 0}, {'col': 4, 'text': '등록방법', 'row': 0}, {'col': 0, 'rowspan': 2, 'text': '2회 신청', 'row': 1}, {'col': 1, 'text': '1차', 'row': 1}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 1}, {'col': 3, 'text': '전공별 수업료의 50%+자율경비', 'row': 1}, {'col': 4, 'rowspan': 6, 'text': '우리은행가상 계좌 입금(신용카드납부 불가)', 'row': 1}, {'col': 1, 'text': '2차', 'row': 2}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 2}, {'col': 3, 'text': '전공별 수업료의 50%', 'row': 2}, {'col': 0, 'rowspan': 4, 'text': '4회 신청', 'row': 3}, {'col': 1, 'text': '1차', 'row': 3}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 3}, {'col': 3, 'text': '전공별 수업료의 25%+자율경비', 'row': 3}, {'col': 1, 'text': '2차', 'row': 4}, {'col': 2, 'text': '2025. 3. 18. ~ 3. 21. 17:00', 'row': 4}, {'col': 3, 'rowspan': 3, 'text': '전공별 수업료의 25%', 'row': 4}, {'col': 1, 'text': '3차', 'row': 5}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 5}, {'col': 1, 'text': '4차', 'row': 6}, {'col': 2, 'text': '2025. 4. 25. ~ 4. 28. 17:00', 'row': 6}]}, {'table': [{'col': 0, 'text': 'Installment', 'row': 0}, {'colspan': 2, 'col': 1, 'text': 'Registration Period', 'row': 0}, {'col': 3, 'text': 'Tuition', 'row': 0}, {'col': 4, 'text': 'Method', 'row': 0}, {'col': 0, 'rowspan': 2, 'text': '2Installments', 'row': 1}, {'col': 1, 'text': '1st', 'row': 1}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 1}, {'col': 3, 'text': '50% of tuition + Miscellaneous fees', 'row': 1}, {'col': 4, 'rowspan': 6, 'text': 'Deposit in Woori Bank virtual account(Credit card is NOT available)', 'row': 1}, {'col': 1, 'text': '2nd', 'row': 2}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 2}, {'col': 3, 'text': '50% of tuition', 'row': 2}, {'col': 0, 'rowspan': 4, 'text': '4Installments', 'row': 3}, {'col': 1, 'text': '1st', 'row': 3}, {'col': 2, 'text': '2025. 2. 21 ~ 2. 27. 17:00', 'row': 3}, {'col': 3, 'text': '25% of tuition + Miscellaneous fees', 'row': 3}, {'col': 1, 'text': '2nd', 'row': 4}, {'col': 2, 'text': '2025. 3. 18. ~ 3. 21. 17:00', 'row': 4}, {'col': 3, 'rowspan': 3, 'text': '25% of tuition', 'row': 4}, {'col': 1, 'text': '3rd', 'row': 5}, {'col': 2, 'text': '2025. 4. 4. ~ 4. 7. 17:00', 'row': 5}, {'col': 1, 'text': '4th', 'row': 6}, {'col': 2, 'text': '2025. 4. 25. ~ 4. 28. 17:00', 'row': 6}]}]
+
+                        END OF CONTEXT 3
+                        ]
+                        --------------------
+                        
+                        --------------------
+                        CONTEXT 4 : [
+                        BEGIN OF CONTEXT 4
+
+                            [URL]
+                            https://www.yonsei.ac.kr/sc/support/notice.jsp?mode=view&article_no=242357&board_wrapper=%2Fsc%2Fsupport%2Fnotice.jsp&pager.offset=30&board_no=15
+
+                            [TEXT]
+                            category: [공통총무처 재무회계팀] title: '2025-1학기 전문/특수대학원 신입생 등록안내' date: 2024.12.26 
+ - 2025-1학기 전문/특수대학원 신입생 등록안내 - * 외국인의 경우 자율경비 선택기간 및 등록금 납부기간이 상이하니 유의하여 등록하시기 바랍니다. - 1. 등록금 납부 기간 - 가. 대한민국 국적자:  2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나. 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 2. 자율경비 - 가. 선택기간 - 1) 대한민국 국적자: 2025. 2. 3.(월) 09:30 ~ 2. 5.(수) 12:00 - 2) 외국 국적자(Foreign students): 2025. 1. 7.(화) 09:30 ~ 1. 8.(수) 16:00 - 나.경영전문대학원, 국제학대학원 및 특수대학원 신입생은 자율경비 선택 없음 - 다. 선택방법:연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인 [ID: 수험번호(대문자), Password: 주민번호 앞 6자리] - → 학사행정 → 등록 → 자율경비 선택 → 납부하고자 하는 항목 클릭 → 동의문구 입력 → 맨 아래 하단에 ‘확정’ 버튼 클릭 - (확정버튼을 누르지 않으면 선택되지 않으며,확정 후 변경은 불가함.) - 라. 납부방법:등록금 납부기간에 등록금과 함께 일괄 납부 - 마. 유의사항 - 1) 자율경비 선택 및 수정은선택기간중에만 가능함 - 2) 자율경비 선택 내역을 ‘임시저장’한 경우에는 수정 가능하나,‘확정’ 버튼을 클릭한 후에는 수정이 일체 불가함 - 3. 등록금 조회 및 고지서 출력 - 가. 대한민국 국적자: 2025. 2. 7.(금) 09:30 ~ 2. 11.(화) 17:00 - 나. 외국 국적자(Foreign students): 2025. 1. 13.(월) 09:30 ~ 1. 17.(금) 17:00 - 다. 고지서 출력방법 :연세포탈(portal.yonsei.ac.kr) 접속 → 학사정보시스템 → 로그인[ID:수험번호(대문자), Password: 주민번호 앞 6자리] → 학사행정 → 등록 → 등록금고지서출력 - (등록금 납부메뉴 사용안내 참고) - 라. 유의 사항 - 1) 등록금 고지서는정해진 조회 기간에만 조회 및 발급 가능 - 2)등록금 납부 후에는 어떠한 방법으로도 고지서 출력이 불가(필요 시 납부하기 전 출력) - 4. 납부방법 - 가. 우리은행 입금전용계좌(가상계좌)로의 계좌이체 납부 - 1) 전체 금융기관을 이용하여 고지서에 명시된 입금 전용 계좌로전액 일괄 입금 - - 입금전용계좌(가상계좌)는학생 1인당 1계좌를 부여함 - - 학생 본인이 아닌 타인 명의로 입금하여도 (=입금자 이름이 달라도) 해당 입금전용계좌로 입금하면자동으로 즉시 등록 처리됨. - - 입금 금액이 일치하지 않으면 납부가 불가하므로고지서 금액을 정확히 한번에 입금하여야 함 - 2) 납부방법: 인터넷뱅킹, 폰뱅킹, ATM이체, 창구납부 등 모두 가능 - 3) 유의사항 - 가) 우리은행 외 타 은행을 이용할 경우 송금수수료가 발생할 수 있음 - 나) CMA 통장 등 제 2금융권 일부 계좌에서는 송금이 불가할 수 있음 - 다)금액 분할 납부는 불가하므로 본인의 이체 한도를 사전에 확인 바람 - 라)납부 방법 변경(계좌이체→신용카드) 등을 위한 납입금 반환은 불가함 - 나. 신용카드 납부 - 1) 사용 가능 카드:‘우리 신용카드’ (타사 카드 불가, 체크카드 및 법인카드 사용 불가) - 2) 납부 방법 - 가) 우리카드 홈페이지: 홈페이지 접속(http://card.wooribank.com) – 라이프 – 납부서비스 – 대학등록금 메뉴 - 나) 우리카드 고객센터: 1588-9955, 1599-9955 - 다) 우리은행 전국지점 방문 - 3) 유의사항 - 가) 신용카드 납부 시납부 후 4시간 이후에 연세포탈에 등록 반영됩니다. - 나) 카드 납부는 전액 결제 시 가능하며,분할 결제 및 일부 결제는 불가함 - 다) 본인 명의의 카드가 아니어도 납부 가능하며, 취소는 납부 당일에만 가능 (카드사 문의) - 라) 할부서비스 이용 가능하며, 이자 등 자세한 사항은 카드사로 문의 - 마) 등록금 카드 결제 금액은연말정산 소득공제 시 카드 사용금액에서 제외됨 - 5. 등록금 납부 확인 - 가. 연세대학교 학사포탈(http://portal.yonsei.ac.kr)에 접속 → 로그인 → 학사행정 → 등록 → 등록금납부확인서 출력→ 해당 학년도학기 선택 → 국문/영문선택 → 출력 - 연세대학교 총무처 재무·회계팀
+
+                            [TABLES]
+                            []
+
+                        END OF CONTEXT 4
+                        ]
+                        --------------------
+                        
+2025-02-20 12:51:26,796:INFO:
+이전 대화 : Previous Q1: 2025-1 학부 등록금 납부 일정
+    Previous A1: 2025-1 학부 등록금 납부 일정은 다음과 같습니다:
+
+- **등록금 납부 기간**: 2025년 2월 21일(금) ~ 2월 27일(목)입니다.
+
+자세한 사항은 연세대학교 공식 웹사이트를 참고하시기 바랍니다. 
+
+    
+
+2025-02-20 12:51:26,796:INFO:메시지 구성 완료
+2025-02-20 12:51:26,796:INFO:OpenAI API 호출 시작
+2025-02-20 12:51:27,562:INFO:OpenAI API 초기 응답 수신 (시간: 0.766239초)
+2025-02-20 12:51:29,176:INFO:=== 응답 처리 결과 ===
+2025-02-20 12:51:29,178:INFO:대화 #2 기록됨:
+{
+  "id": 2,
+  "original_query": "2025-1학기 추가등록 언제야?",
+  "rewritten_query": "2025-1학기 추가등록 언제야?",
+  "response": "2025-1학기 추가등록 일정은 다음과 같습니다:\n\n- **추가등록 기간**: 2025년 3월 12일(수) ~ 3월 14일(금)입니다.\n\n자세한 사항은 연세대학교 공식 웹사이트를 참고하시기 바랍니다. \n\n",
+  "timestamp": 1740055889.1780324
+}
+2025-02-20 12:51:38,047:INFO:[세션 ylvq50ucek-ip hash:12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36] 
+ 사용자 쿼리: 컴퓨터과학과의 복수전공 졸업요건이 어떻게 되나요?
+2025-02-20 12:51:38,047:INFO:선택된 검색 방법: ISAAC Basic - 균형 잡힌 검색
+2025-02-20 12:51:38,047:INFO:새 검색 설정으로 업데이트: {'search_method': 'ISAAC Basic - 균형 잡힌 검색'}
+2025-02-20 12:51:38,049:INFO:감지된 언어: ko
+2025-02-20 12:51:38,049:INFO:새로운 쿼리 수신: 컴퓨터과학과의 복수전공 졸업요건이 어떻게 되나요? (언어: ko)
+2025-02-20 12:51:38,052:INFO:쿼리 상태 확인 완료
+2025-02-20 12:51:38,053:INFO:=== 병렬 쿼리 처리 시작 ===
+2025-02-20 12:51:38,055:INFO:=== 주제어 추출 시작 ===
+2025-02-20 12:51:38,055:INFO:분석할 쿼리: 컴퓨터과학과의 복수전공 졸업요건이 어떻게 되나요?
+2025-02-20 12:51:38,063:INFO:=== Query Rewrite Process Started ===
+2025-02-20 12:51:38,063:INFO:Current Query: 컴퓨터과학과의 복수전공 졸업요건이 어떻게 되나요?
+2025-02-20 12:51:38,063:INFO:Query History Count: 2
+2025-02-20 12:51:38,092:INFO:Q: 2025-1 학부 등록금 납부 일정
+A: 2025-1 학부 등록금 납부 일정은 다음과 같습니다:
+
+- **등록금 납부 기간**: 2025년 2월 21일(금) ~ 2월 27일(목)입니다.
+
+자세한 사항은 연세대학교 공식 웹사이트를 참고하시기 바랍니다. 
+
+2025-02-20 12:51:38,097:INFO:Q: 2025-1학기 추가등록 언제야?
+A: 2025-1학기 추가등록 일정은 다음과 같습니다:
+
+- **추가등록 기간**: 2025년 3월 12일(수) ~ 3월 14일(금)입니다.
+
+자세한 사항은 연세대학교 공식 웹사이트를 참고하시기 바랍니다. 
+
+
+2025-02-20 12:51:38,098:INFO:Calling GPT-4o for query rewriting
+2025-02-20 12:51:42,140:INFO:GPT-4o Response: REWRITTEN: "컴퓨터과학과 학부 복수전공 졸업요건은 무엇인가요?"
+
+EXPECTED_DOC:  
+```json
+{
+    "title": "컴퓨터과학과 복수전공 졸업요건 안내",
+    "summary": "컴퓨터과학과의 복수전공을 위한 졸업요건에 대한 상세 정보입니다.",
+    "keywords for DOC": ["복수전공", "졸업요건", "컴퓨터과학과", "학부", "연세대학교"],
+    "expected_queries": [
+        "컴퓨터과학과의 전공 필수 과목은 무엇인가요?",
+        "복수전공 신청 방법은 어떻게 되나요?",
+        "졸업하기 위한 학점 요건은?"
+    ]
+}
+```
+TOPICS: ["인공지능융합대학"]
+2025-02-20 12:51:42,146:INFO:Query Rewrite Process Completed 
+ rewritten : "컴퓨터과학과 학부 복수전공 졸업요건은 무엇인가요?" 
+ subquery : ```json
+{
+    "title": "컴퓨터과학과 복수전공 졸업요건 안내",
+    "summary": "컴퓨터과학과의 복수전공을 위한 졸업요건에 대한 상세 정보입니다.",
+    "keywords for DOC": ["복수전공", "졸업요건", "컴퓨터과학과", "학부", "연세대학교"],
+    "expected_queries": [
+        "컴퓨터과학과의 전공 필수 과목은 무엇인가요?",
+        "복수전공 신청 방법은 어떻게 되나요?",
+        "졸업하기 위한 학점 요건은?"
+    ]
+}
+``` 
+ topics : ['인공지능융합대학']
+2025-02-20 12:51:43,080:WARNING:토픽 추출 시간 초과. 빈 토픽으로 진행합니다.
+2025-02-20 12:51:43,096:INFO:병렬 처리 완료 - 최종 토픽: []

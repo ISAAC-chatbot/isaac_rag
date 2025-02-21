@@ -14,8 +14,13 @@ from langchain_core.messages import (
 )
 from openai import OpenAI
 from pydantic import BaseModel
-from .search import hybrid_search
+from .mappings import DEPARTMENT_MAPPINGS
+from .search import hybrid_search, notice_search
 from .embeddings import generate_query_vector
+from concurrent.futures import ThreadPoolExecutor
+
+
+
 
 
 class ConversationMessage(BaseModel):
@@ -45,25 +50,47 @@ class ConversationManager:
         self.search_config = search_config or {}
         self.query_history = []
         self.graph = self._create_conversation_graph()
+        
+        # 로거 설정 수정
         self.logger = logger or logging.getLogger(__name__)
+        self.logger.setLevel(logging.INFO)
+        
+        # 포맷터 생성
+        formatter = logging.Formatter('\n%(asctime)s - %(levelname)s - %(message)s')
+        
+        # 터미널 출력을 위한 스트림 핸들러
+        terminal_handler = logging.StreamHandler()
+        terminal_handler.setLevel(logging.INFO)
+        terminal_handler.setFormatter(formatter)
+        
+        # 파일 출력을 위한 파일 핸들러
+        file_handler = logging.FileHandler('/home/ubuntu/sang/logs/search2.log')
+        file_handler.setLevel(logging.INFO)
+        file_handler.setFormatter(formatter)
+        
+        # 기존 핸들러 제거
+        self.logger.handlers = []
+        
+        # 새 핸들러 추가
+        self.logger.addHandler(terminal_handler)
+        self.logger.addHandler(file_handler)
 
     def _create_conversation_graph(self) -> StateGraph:
         workflow = StateGraph(ConversationState)
         
         # 노드 정의
         workflow.add_node("get_query", self._get_query)
-        workflow.add_node("rewrite_query", self._rewrite_query)
-        workflow.add_node("search_documents", self._search_documents)
+        workflow.add_node("parallel_query_processing", self._parallel_query_processing)  # 새로운 병렬 처리 노드
+        workflow.add_node("parallel_search", self._search_documents_parallel)
         workflow.add_node("create_context", self._create_context)
         workflow.add_node("generate_response_virtual", self._generate_response_virtual)
         workflow.add_node("manage_history", self._manage_history)
         
-        
-        # 엣지 설정
+        # 순차적 실행을 위한 엣지 설정
         workflow.add_edge(START, "get_query")
-        workflow.add_edge("get_query", "rewrite_query")
-        workflow.add_edge("rewrite_query", "search_documents")
-        workflow.add_edge("search_documents", "create_context")
+        workflow.add_edge("get_query", "parallel_query_processing")
+        workflow.add_edge("parallel_query_processing", "parallel_search")
+        workflow.add_edge("parallel_search", "create_context")
         workflow.add_edge("create_context", "generate_response_virtual")
         workflow.add_conditional_edges(
             "generate_response_virtual",
@@ -414,7 +441,6 @@ class ConversationManager:
                 "response": error_message
             }
 
-
     def _create_context(self, state: ConversationState) -> ConversationState:
 
         # self.logger.info(f"State 내용: {state}")
@@ -465,7 +491,6 @@ class ConversationManager:
                 "context": context_text
             }
 
-
     def _generate_response_virtual(self, state: ConversationState) -> ConversationState:
             """가상 응답 생성 노드 - 실제 응답 생성은 main.py에서 처리"""
             self.logger.info("=== 가상 응답 생성 노드 도달 ===")
@@ -473,12 +498,10 @@ class ConversationManager:
             state["needs_response"] = True
             return state
 
-
     def _should_remove(self, state: ConversationState) -> bool:
         """대화 히스토리가 최대 크기를 초과하는지 확인"""
         query_history = state.get("query_history", [])
         return len(query_history) >= self.max_queries
-
 
     def _manage_history(self, state: ConversationState) -> ConversationState:
         """대화 히스토리 관리 - 가장 오래된 대화 제거"""
@@ -494,7 +517,6 @@ class ConversationManager:
             **state,
             "query_history": query_history
         }
-
 
     def process_message(self, message: str, language: str = "ko") -> ConversationState:
         """사용자 메시지를 처리하고 최종 상태를 반환"""
@@ -519,7 +541,6 @@ class ConversationManager:
 
         return final_state
 
-
     def update_query_history(self, original_query: str, rewritten_query: str, response: str):
         """대화 기록 업데이트"""
         # 중복 기록 방지를 위한 검사
@@ -542,3 +563,238 @@ class ConversationManager:
         }
         self.query_history.append(conversation_entry)
         self.logger.info(f"대화 #{conversation_id} 기록됨:\n{json.dumps(conversation_entry, indent=2, ensure_ascii=False)}")
+
+    #새로 첨가     
+    def _search_documents_notice(self, state: dict) -> dict:
+        """공지사항 문서 검색"""
+        try:
+            query_text = state.get("rewritten_query", "")  # current_query 대신 rewritten_query 사용
+            topics = state.get("topics", [])
+            
+            if not topics:
+                return {"notice_documents": []}
+            
+            # 모든 토픽에 대해 검색 수행
+            all_notice_documents = []
+            for topic in topics:
+                notice_documents = notice_search(
+                    query_text=query_text,
+                    topic=topic,
+                    top_k=5,
+                    logger=self.logger
+                )
+                all_notice_documents.extend(notice_documents)
+            
+            return {"notice_documents": all_notice_documents}
+            
+        except Exception as e:
+            self.logger.error(f"공지사항 검색 중 오류 발생: {str(e)}")
+            return {"notice_documents": []}
+
+    def _parallel_query_processing(self, state: ConversationState) -> ConversationState:
+        """주제어 추출과 쿼리 재작성을 병렬로 처리"""
+        current_query = state.get('current_query', '')
+        self.logger.info("\n" + "="*50)
+        self.logger.info(f"병렬 쿼리 처리 시작")
+        self.logger.info(f"입력 쿼리: {current_query}")
+        self.logger.info("="*50)
+
+        # 상태 복사 시 현재 쿼리 명시적 포함
+        base_state = {
+            **state,
+            "current_query": current_query
+        }
+
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            # Future 객체 생성 시 명시적 상태 전달
+            topic_future = executor.submit(self._find_topic_in_query, base_state)
+            rewrite_future = executor.submit(self._rewrite_query, base_state)
+
+            try:
+                from concurrent.futures import TimeoutError
+                
+                # 토픽 추출 처리
+                try:
+                    topic_result = topic_future.result(timeout=5)
+                    topics = topic_result.get("topics", [])
+                    # 토픽 추출 결과는 나중에 출력하기 위해 저장
+                    extracted_topics = topics
+                except TimeoutError:
+                    self.logger.error("토픽 추출 시간 초과")
+                    topics = []
+                    extracted_topics = []
+                except Exception as e:
+                    self.logger.error(f"토픽 추출 중 오류 발생: {str(e)}")
+                    topics = []
+                    extracted_topics = []
+
+                # 쿼리 재작성 처리
+                try:
+                    rewrite_result = rewrite_future.result(timeout=5)
+                    rewritten_query = rewrite_result.get("rewritten_query")
+                    subquery = rewrite_result.get("subquery")
+                except TimeoutError:
+                    self.logger.error("쿼리 재작성 시간 초과")
+                    rewritten_query = current_query
+                    subquery = current_query
+                except Exception as e:
+                    self.logger.error(f"쿼리 재작성 중 오류 발생: {str(e)}")
+                    rewritten_query = current_query
+                    subquery = current_query
+
+                # 결과 병합
+                merged_state = {
+                    **state,
+                    "rewritten_query": rewritten_query,
+                    "subquery": subquery,
+                    "current_query": current_query,
+                    "topics": topics,
+                    "needs_notice_search": bool(topics)
+                }
+
+                # 최종 응답 후 토픽 출력
+                def print_topics():
+                    print("\n" + "="*50)
+                    print(f"추출된 토픽: {extracted_topics}")
+                    print("="*50 + "\n")
+
+                # 0.1초 후에 토픽 출력 (응답이 완전히 출력된 후)
+                from threading import Timer
+                Timer(0.1, print_topics).start()
+
+                return merged_state
+
+            except Exception as e:
+                self.logger.error(f"병렬 처리 중 치명적 오류 발생: {str(e)}")
+                return {
+                    **state,
+                    "rewritten_query": current_query,
+                    "subquery": current_query,
+                    "topics": [],
+                    "current_query": current_query,
+                    "needs_notice_search": False
+                }
+
+    def _find_topic_in_query(self, state: ConversationState) -> ConversationState:
+        """쿼리에서 주요 주제어 추출 (최대 2개)"""
+        try:
+            current_query = state.get("current_query", "")
+            
+            if not current_query:
+                self.logger.warning("쿼리가 비어있습니다. 빈 토픽으로 반환합니다.")
+                return {**state, "topics": []}
+            
+            # 쿼리를 단어 단위로 분리
+            query_words = current_query.split()
+            
+            found_topics = []
+            seen_keywords = set()  # 이미 매칭된 키워드 추적
+            
+            # 각 단어에 대해
+            for word in query_words:
+                if len(found_topics) >= 2:  # 이미 2개의 토픽을 찾았다면 중단
+                    break
+                    
+                # 각 부서별 키워드 검사
+                for dept, keywords in DEPARTMENT_MAPPINGS.items():
+                    # 현재 단어가 키워드 목록에 정확히 일치하는 경우
+                    if word in keywords and word not in seen_keywords:
+                        if dept not in found_topics:  # 중복 토픽 방지
+                            found_topics.append(dept)
+                            seen_keywords.add(word)
+                            break  # 현재 단어에 대한 검색 중단
+            
+            self.logger.info(f"입력 쿼리: {current_query}")
+            self.logger.info(f"추출된 토픽: {found_topics}")
+            
+            return {
+                **state,
+                "topics": found_topics
+            }
+            
+        except Exception as e:
+            self.logger.error(f"토픽 추출 중 오류 발생: {str(e)}")
+            return {**state, "topics": []}
+
+    def _search_documents_parallel(self, state: ConversationState) -> ConversationState:
+        """일반 문서 검색과 공지사항 검색을 병렬로 실행"""
+        self.logger.info("=== 병렬 문서 검색 시작 ===")
+
+        topics = state.get("topics", [])
+        # 토픽이 있으면 자동으로 공지사항 검색 활성화
+        needs_notice_search = bool(topics)
+
+        self.logger.info(f"검색 상태 - needs_notice_search: {needs_notice_search}, topics: {topics}")
+
+        with ThreadPoolExecutor(max_workers=3) as executor:
+            futures = []
+            
+            # 일반 문서 검색 - 통합 검색
+            futures.append(('doc', None, executor.submit(self._search_documents, state.copy())))
+            
+            # 공지사항 검색 - 토픽별로 실행
+            if needs_notice_search and topics:
+                self.logger.info("토픽별 공지사항 검색 시작")
+                for topic in topics:
+                    futures.append(('notice', topic, executor.submit(self._search_documents_notice, {
+                        **state.copy(),
+                        "topics": [topic]
+                    })))
+            else:
+                self.logger.info("공지사항 검색 건너뜀 (topics 없음)")
+
+            try:
+                # 각 작업에 10초의 타임아웃 설정
+                from concurrent.futures import TimeoutError
+                
+                general_documents = []  # 일반 문서 저장
+                topic_notices = {}      # 토픽별 공지사항 저장
+                
+                for search_type, topic, future in futures:
+                    try:
+                        result = future.result(timeout=10)
+                        if search_type == 'doc':
+                            docs = result.get("documents", [])
+                            # 일반 문서는 최대 5개까지만 선택
+                            selected_docs = docs[:5]
+                            self.logger.info(f"일반 문서 검색 결과: {len(selected_docs)}개")
+                            general_documents = selected_docs
+                        else:  # notice
+                            notice_docs = result.get("notice_documents", [])
+                            selected_notices = notice_docs[:5]
+                            self.logger.info(f"토픽 '{topic}'의 공지사항 검색 결과: {len(selected_notices)}개")
+                            topic_notices[topic] = selected_notices
+                    except TimeoutError:
+                        self.logger.warning(f"{search_type} 검색 시간 초과 (토픽: {topic})")
+                    except Exception as e:
+                        self.logger.error(f"{search_type} 검색 중 오류 (토픽: {topic}): {str(e)}")
+
+                # 최종 문서 병합
+                final_documents = []
+                
+                # 토픽별 공지사항 추가 (결과가 있는 경우만 추가)
+                for topic, notices in topic_notices.items():
+                    if notices:  # 결과가 하나라도 있으면 추가
+                        self.logger.info(f"토픽 '{topic}'의 공지사항 수: {len(notices)}개")
+                        final_documents.extend(notices)
+                
+                # 일반 문서 추가 (공지사항 유무와 관계없이 항상 추가)
+                if general_documents:
+                    self.logger.info(f"일반 문서 수: {len(general_documents)}개")
+                    final_documents.extend(general_documents)
+
+                self.logger.info(f"최종 검색된 총 문서 수: {len(final_documents)}")
+                self.logger.info("="*50)
+
+                # 검색 결과가 하나도 없는 경우에도 state는 반환
+                return {
+                    **state,
+                    "documents": final_documents
+                }
+
+            except Exception as e:
+                self.logger.error(f"문서 검색 중 오류 발생: {str(e)}")
+                return {
+                    **state,
+                    "documents": []
+                }

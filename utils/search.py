@@ -179,6 +179,7 @@ def notice_search(query_text, topic, top_k=5, logger=None):
         result = response.json()
         documents = []
         
+        """
         for hit in result.get("hits", {}).get("hits", []):
             doc = hit.get("_source", {})
             # title과 content만 통합
@@ -193,6 +194,23 @@ def notice_search(query_text, topic, top_k=5, logger=None):
                 "url": doc.get("url", ""),
                 "merged_text": merged_text
             })
+        """
+        
+        for hit in result.get("hits", {}).get("hits", []):
+            doc = hit.get("_source", {})
+            # _create_context 형식에 맞게 변환하되, URL을 "출처:" 형식으로 포함
+            formatted_doc = {
+                "url": doc.get("url", ""),
+                "merged_text": (
+                    f"출처: {doc.get('url', '')}\n"  # 명시적으로 "출처:" 포함
+                    f"{doc.get('title', '')}\n"
+                    f"{doc.get('content', '')}\n"
+                    f"{doc.get('createdDate', '')}\n"
+                    f"{doc.get('source', '')}"
+                ),
+                "tables": "N/A"
+            }
+            documents.append(formatted_doc)
             
         logger.info(f"공지사항 검색 결과 수: {len(documents)}")
         return documents

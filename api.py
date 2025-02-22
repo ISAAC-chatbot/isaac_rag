@@ -273,7 +273,7 @@ def chat(
             clean_url = html.unescape(clean_url)
             clean_url_escape = html.escape(clean_url)
             
-            data = ChatResponse(type=ResponseType.URL, text=clean_url_escape, last=True)
+            data = ChatResponse(type=ResponseType.URL, text=clean_url, last=True)
             yield f"data: {data.json()}\n\n"
             # yield json.dumps(data.model_dump()) + "\n"
             

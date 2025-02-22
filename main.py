@@ -340,5 +340,5 @@ if __name__ == "__main__":
     app = mount_gradio_app(app, gradio_app, path="/")
 
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8089)
+    uvicorn.run(app, host="0.0.0.0", port=8088)
     

@@ -18,6 +18,8 @@ import os
 from dotenv import load_dotenv
 from enum import Enum
 from datetime import datetime
+
+
 # .env 파일 로드
 load_dotenv()
 
@@ -244,8 +246,8 @@ def chat(
 
 
                 data = ChatResponse(type=ResponseType.MESSAGE, text=chunk)
-                yield json.dumps(data.model_dump()) + "\n"
-          
+                yield f"data: {data.json()}\n\n"
+                # yield json.dumps(data.model_dump()) + "\n"
 
             del buffer
 
@@ -271,8 +273,9 @@ def chat(
             clean_url = html.unescape(clean_url)
             clean_url_escape = html.escape(clean_url)
             
-            data = ChatResponse(type=ResponseType.URL, text=clean_url_escape, last=True)
-            yield json.dumps(data.model_dump()) + "\n"
+            data = ChatResponse(type=ResponseType.URL, text=clean_url, last=True)
+            yield f"data: {data.json()}\n\n"
+            # yield json.dumps(data.model_dump()) + "\n"
             
             history_response = update_history(token, request.chat_room_id, user_message, bot_message, clean_url_escape)
             
@@ -283,13 +286,15 @@ def chat(
                 history_response = {"type" : ResponseType.CHAT_ROOM_INFO, "response": history_response}  # 응답이 dict가 아닐 경우 기본 구조 생성
 
             history_response_data = json.dumps(history_response)
-            yield history_response_data + "\n"
+            yield f"data: {history_response_data}\n\n"
+            # yield history_response_data + "\n"
 
         else:
             bot_response = final_state.get("response", "죄송합니다. 응답을 생성할 수 없습니다.")
             clean_url_escape= ""            
             data = ChatResponse(type=ResponseType.MESSAGE, text=bot_response, last=True)
-            yield json.dumps(data.model_dump()) + "\n"
+            yield f"data: {data.json()}\n\n"
+            # yield json.dumps(data.model_dump()) + "\n"
             
             history_response = update_history(token, request.chat_room_id, user_message, bot_response, clean_url_escape)
             # JSON 응답을 dict로 변환 후 'last': True 추가
@@ -299,8 +304,11 @@ def chat(
                 history_response = {"type" : ResponseType.CHAT_ROOM_INFO, "response": history_response}  # 응답이 dict가 아닐 경우 기본 구조 생성
 
             history_response_data = json.dumps(history_response)
-            yield history_response_data + "\n"
+            yield f"data: {history_response_data}\n\n"
+            # yield history_response_data + "\n"
 
         # 비동기 이벤트 리스너
         # background_tasks.add_task(update_history, token, request.chat_room_id, user_message, bot_message, clean_url_escape)
-    return StreamingResponse(response_generator(), media_type="application/json")
+    return StreamingResponse(response_generator(), media_type="text/event-stream")
+
+

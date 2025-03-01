@@ -218,6 +218,7 @@ def chat(
                     second_flag = True
                     first_flag = False
                     continue
+
                 elif first_flag and chunk != "처":
                     bot_message += "출" + chunk
                     first_flag = False

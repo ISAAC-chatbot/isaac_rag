@@ -415,7 +415,6 @@ class ConversationManager:
                     user_query_text = rewritten_query,
                     user_query_vector = query_embedding,
                     top_k = self.search_config.get("top_k", 5),
-                    pipeline_name = actual_search_method,
                     logger = self.logger
                 )
                 # user_query_text, user_query_vector, k=5, pipeline_name="hybrid-pipeline-balanced"

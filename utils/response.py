@@ -68,7 +68,6 @@ def generate_response(
             3. All claims must be supported by explicit evidence from the context.
             4. Final answers must not expose internal logical steps or irrelevant content.
             5. Provides the user with a concise, accurate, and contextually appropriate answer.
-            6. Don't use ** for important information.
 
             ## INPUT FORMAT: 
             --------------------

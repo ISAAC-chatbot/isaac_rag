@@ -32,9 +32,10 @@ OPENSEARCH_NOTICE_INDEX = os.getenv('OPENSEARCH_NOTICE_INDEX')
 
 
 # ====== 하이브리드 검색 (BM25 + KNN) ======
-# hybrid-pipeline-vector-focused 1:9
-# hybrid-pipeline-text-focused 9:1
-# hybrid-pipeline-balanced 5:5
+# hybrid-pipeline-vector-focused
+# hybrid-pipeline-text-focused 
+# hybrid-pipeline-balanced 
+# hybrid-pipeline-merged-priority
 
 def hybrid_search(user_query_text, user_query_vector, top_k=5, pipeline_name="hybrid-pipeline-balanced", logger=None):
 
@@ -44,31 +45,37 @@ def hybrid_search(user_query_text, user_query_vector, top_k=5, pipeline_name="hy
     하이브리드 파이프라인(hybrid-pipeline-balanced)을 사용하여
     summarized_text(BM25) + vector(KNN) 의 스코어를 결합한 검색을 수행합니다.
     """
+    print(f"검색 질의: {user_query_text, pipeline_name}")
     try:
         search_query = {
-            "_source": ["url", "merged_text", "tables"],  # 가져올 필드
-            "size": top_k,
-            "query": {
-                "bool": {
-                    "should": [
-                        {
-                            "match": {
-                                "summarized_text": user_query_text
-                            }
-                        },
-                        {
-                            "knn": {
-                                "vector": {
-                                    "vector": user_query_vector,
-                                    "k": top_k
-                                }
+        "_source": ["url", "merged_text", "tables"],  # 가져올 필드
+        "size": top_k,
+        "query": {
+            "bool": {
+                "should": [
+                    {
+                        "match": {
+                            "merged_text": user_query_text
+                        }
+                    },
+                    {
+                        "match": {
+                            "merged_text": user_query_text
+                        }
+                    },
+                    {
+                        "knn": {
+                            "vector": {
+                                "vector": user_query_vector,
+                                "k": top_k
                             }
                         }
-                    ],
-                    "minimum_should_match": 1
-                }
+                    }
+                ],
+                "minimum_should_match": 1
             }
         }
+    }
 
         # search_pipeline 파라미터로 하이브리드 파이프라인 지정
         url = f"{OPENSEARCH_ENDPOINT}/{OPENSEARCH_GENERAL_INDEX}/_search?search_pipeline={pipeline_name}"

@@ -8,7 +8,7 @@ from gradio import mount_gradio_app
 from utils.data_loader import initialize_client
 from utils.response import (generate_response, detect_language)
 from utils.conversation import ConversationManager
-
+from fastapi.responses import RedirectResponse
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), 'utils'))
@@ -333,6 +333,14 @@ if __name__ == "__main__":
 
     # API 모듈 포함 (Gradio와 동일한 포트에서 실행)
     
+
+    @app.get("/android")
+    def download_android_apk():
+        """
+        S3에 저장된 APK 파일로 리디렉션
+        """
+        return RedirectResponse(url="https://issac-dev.s3.ap-northeast-2.amazonaws.com/ISAAC-release.apk")
+
     app.include_router(router, prefix="/api")
     
     # Gradio 앱 실행

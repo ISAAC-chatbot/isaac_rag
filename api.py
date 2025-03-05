@@ -18,7 +18,7 @@ import os
 from dotenv import load_dotenv
 from enum import Enum
 from datetime import datetime
-
+import time
 
 # .env 파일 로드
 load_dotenv()
@@ -28,12 +28,13 @@ BACKEND_SERVER = os.getenv("BACKEND_SERVER")  # 기본값 설정 가능
 
 router = APIRouter()
 
-def update_history(token: str, chat_room_id: Optional[int], question: str, answer: str, source: str):
+def update_history(token: str, chat_room_id: Optional[int], question: str, answer: str, source: str, elapsed_time: float):
     try:
         payload = {
             "question": question,
             "answer": answer,
-            "sourceURL": source
+            "sourceURL": source,
+            "elapsedTime" : elapsed_time
         }
 
         # ✅ chat_room_id가 None이 아닐 때만 추가
@@ -130,6 +131,8 @@ class ChatRoomResponse(BaseModel):
 def chat(
     request: ChatRequest, 
     token: str = Depends(get_bearer_token)):
+
+    start_time = time.time()
 
     session_managers = {}
 
@@ -278,7 +281,10 @@ def chat(
             yield f"data: {data.json()}\n\n"
             # yield json.dumps(data.model_dump()) + "\n"
             
-            history_response = update_history(token, request.chat_room_id, user_message, bot_message, clean_url_escape)
+             # 최종 응답 직전 시간 측정
+            end_time = time.time()
+            elapsed_time = round(end_time - start_time, 3)
+            history_response = update_history(token, request.chat_room_id, user_message, bot_message, clean_url_escape, elapsed_time)
             
             # JSON 응답을 dict로 변환 후 'last': True 추가
             if isinstance(history_response, dict):  

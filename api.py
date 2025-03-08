@@ -275,7 +275,7 @@ def chat(
             
             # URL 디코딩 및 안전한 HTML 출력
             clean_url = html.unescape(clean_url)
-            clean_url_escape = html.escape(clean_url)
+            # clean_url_escape = html.escape(clean_url)
             
             data = ChatResponse(type=ResponseType.URL, text=clean_url, last=True)
             yield f"data: {data.json()}\n\n"
@@ -284,7 +284,7 @@ def chat(
              # 최종 응답 직전 시간 측정
             end_time = time.time()
             elapsed_time = round(end_time - start_time, 3)
-            history_response = update_history(token, request.chat_room_id, user_message, bot_message, clean_url_escape, elapsed_time)
+            history_response = update_history(token, request.chat_room_id, user_message, bot_message, clean_url, elapsed_time)
             
             # JSON 응답을 dict로 변환 후 'last': True 추가
             if isinstance(history_response, dict):  

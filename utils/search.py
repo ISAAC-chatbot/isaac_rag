@@ -32,12 +32,8 @@ OPENSEARCH_NOTICE_INDEX = os.getenv('OPENSEARCH_NOTICE_INDEX')
 
 
 # ====== 하이브리드 검색 (BM25 + KNN) ======
-# hybrid-pipeline-vector-focused
-# hybrid-pipeline-text-focused 
-# hybrid-pipeline-balanced 
-# hybrid-pipeline-merged-priority
 
-def hybrid_search(user_query_text, user_query_vector, top_k=5, pipeline_name="hybrid-pipeline-balanced", logger=None):
+def hybrid_search(user_query_text, user_query_vector, top_k=5, pipeline_name="hybrid-search-pipeline", logger=None):
 
     logger = logger or logging.getLogger(__name__)
 

@@ -69,6 +69,7 @@ class ResponseType(str, Enum):
     MESSAGE = "MESSAGE"
     URL = "URL"
     CHAT_ROOM_INFO = "CHAT_ROOM_INFO"
+    ELAPSED_TIME = "ELAPSED_TIME"
 
 class HistoryRequest(BaseModel):
     original_query: str
@@ -120,6 +121,13 @@ class ChatRoomResponse(BaseModel):
                                 "id": 1,
                                 "title": "채팅방 제목",
                                 "createdAt": "2025-02-14T12:00:00"
+                            }
+                        },
+                        "elapsed_time_response": {
+                            "summary": "답변 생성 시간 정보",
+                            "value": {
+                                "type": "ELAPSED_TIME",
+                                "elapsedTime": 7.442,
                             }
                         }
                     }
@@ -275,11 +283,10 @@ def chat(
             
             # URL 디코딩 및 안전한 HTML 출력
             clean_url = html.unescape(clean_url)
-            # clean_url_escape = html.escape(clean_url)
             
             data = ChatResponse(type=ResponseType.URL, text=clean_url, last=True)
             yield f"data: {data.json()}\n\n"
-            # yield json.dumps(data.model_dump()) + "\n"
+
             
              # 최종 응답 직전 시간 측정
             end_time = time.time()
@@ -294,7 +301,13 @@ def chat(
 
             history_response_data = json.dumps(history_response)
             yield f"data: {history_response_data}\n\n"
-            # yield history_response_data + "\n"
+
+            # 실행 시간 응답 추가
+            elapsed_time_response = {
+                "type": ResponseType.ELAPSED_TIME,
+                "elapsedTime ": elapsed_time
+            }
+            yield f"data: {json.dumps(elapsed_time_response)}\n\n"
 
         else:
             bot_response = final_state.get("response", "죄송합니다. 응답을 생성할 수 없습니다.")
@@ -303,7 +316,11 @@ def chat(
             yield f"data: {data.json()}\n\n"
             # yield json.dumps(data.model_dump()) + "\n"
             
-            history_response = update_history(token, request.chat_room_id, user_message, bot_response, clean_url_escape)
+            # 최종 응답 직전 시간 측정
+            end_time = time.time()
+            elapsed_time = round(end_time - start_time, 3)
+            history_response = update_history(token, request.chat_room_id, user_message, bot_response, clean_url_escape, elapsed_time)
+
             # JSON 응답을 dict로 변환 후 'last': True 추가
             if isinstance(history_response, dict):
                 history_response["type"] = ResponseType.MESSAGE  
@@ -312,10 +329,14 @@ def chat(
 
             history_response_data = json.dumps(history_response)
             yield f"data: {history_response_data}\n\n"
-            # yield history_response_data + "\n"
 
-        # 비동기 이벤트 리스너
-        # background_tasks.add_task(update_history, token, request.chat_room_id, user_message, bot_message, clean_url_escape)
+            # 실행 시간 응답 추가
+            elapsed_time_response = {
+                "type": ResponseType.ELAPSED_TIME,
+                "elapsedTime ": elapsed_time
+            }
+            yield f"data: {json.dumps(elapsed_time_response)}\n\n"
+
     return StreamingResponse(response_generator(), media_type="text/event-stream")
 
 

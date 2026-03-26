@@ -15,7 +15,7 @@ from enum import Enum
 from typing import Optional, List, Dict, Any, BinaryIO, Union
 from pathlib import Path
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 import aiofiles
 
 from .config import get_config
@@ -85,8 +85,7 @@ class Document(BaseModel):
     doi: Optional[str] = None
     semantic_scholar_id: Optional[str] = None
     
-    class Config:
-        use_enum_values = True
+    model_config = ConfigDict(use_enum_values=True)
 
 
 class DocumentChunk(BaseModel):

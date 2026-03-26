@@ -16,12 +16,19 @@ from custom_js_content import custom_js
 from custom_css_content import custom_css
 from api import router
 
+# Enhanced RAG Pipeline
+from rag.api import router as rag_router
+
 import logging
 import re
 import html
 
 
-app = FastAPI()
+app = FastAPI(
+    title="ISAAC RAG API",
+    description="Enhanced RAG Pipeline for Scientific/Research Workflows",
+    version="2.0.0",
+)
 
 # 세션별 ConversationManager 저장
 session_managers = {}
@@ -342,6 +349,9 @@ if __name__ == "__main__":
         return RedirectResponse(url="https://issac-dev.s3.ap-northeast-2.amazonaws.com/ISAAC-release.apk")
 
     app.include_router(router, prefix="/api")
+    
+    # Enhanced RAG Pipeline API
+    app.include_router(rag_router, prefix="/api")
     
     # Gradio 앱 실행
     gradio_app = main()

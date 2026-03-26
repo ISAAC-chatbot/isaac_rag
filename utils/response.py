@@ -4,184 +4,209 @@ import time
 import logging
 import langid
 import json
-import faiss
-from rank_bm25 import BM25Okapi
-from konlpy.tag import Okt
 from typing import List, Dict, Generator
 from openai import OpenAI
-from .embeddings import embed_text
-from .search import search_faiss, search_bm25, search_bm25_faiss
 
-def generate_response_with_context(client: OpenAI, query: str, context: List[dict], language: str):
-    start_time = time.perf_counter()
-    if not context:
-        response = "죄송합니다. 관련된 정보를 찾을 수 없습니다. 다른 질문을 해주시겠어요?" if language == 'ko' else "I'm sorry, I couldn't find any relevant information. Would you like to ask a different question?"
-        logging.info("관련 정보를 찾을 수 없어 기본 응답을 반환합니다.")
-        yield response
-        return
+def generate_response(
+    client: OpenAI, 
+    rewritten_query: str,  # 재작성된 쿼리
+    original_query: str,  # 원본 쿼리 추가
+    context: str, 
+    language: str,
+    conversation_manager,
+    logger
+    ) -> Generator:
 
-    # 컨텍스트 텍스트 생성
-    context_start = time.perf_counter()
-    context_text = create_context_text(context)
-    context_end = time.perf_counter()
-    context_time = context_end - context_start
-    logging.info(f"컨텍스트 텍스트 생성 시간: {context_time:.6f}초")
+        logger.info(f"=== 응답 생성 시작 ===")
+        logger.info(f"입력 쿼리: {original_query}")
+        logger.info(f"입력 컨텍스트: {context}")
 
-    # LLM에 전달할 메시지 생성
-    messages = [
-    {
-        "role": "system",
-        "content": f"""You are a friendly and knowledgeable university chatbot. Respond in a professional yet approachable manner, using polite '~요' endings, similar to the tone in the following examples:
+        if not context:
+            response = "죄송합니다. 관련된 정보를 찾을 수 없습니다. 다른 질문을 해주시겠어요?" if language == 'ko' else "I'm sorry, I couldn't find any relevant information. Would you like to ask a different question?"
+            logger.warning("컨텍스트가 비어있어 기본 응답을 반환합니다.")
+            yield response
+            return
+        
+        # 시스템 프롬프트 로깅
+        system_prompt = f"""
+            You are a highly reliable and knowledgeable assistant. Your responses must strictly adhere to the provided documents and ensure factual accuracy through a structured reasoning process. Any unverifiable or speculative information is strictly prohibited.
 
-        - "수강 변경 기간이 끝난 후에는 추가로 수강 신청이 어려워요. 데이터 처리 작업이 진행되기 때문이에요."
-        - "수강 철회는 학사 포털에서 지정된 기간 동안만 가능해요. 보통 개강 후 5~6주차가 수강 철회 기간이에요."
-        - "추가 정보가 필요하시면 학사지원팀에 문의해 보세요. 전화번호는 02-2123-2090, 2091, 2096, 2097입니다."
+            ### INTERNAL THINKING PROCESS (FOR SYSTEM ONLY):
+            1. **Structured Reasoning (CoVe)**:
+            - Step 1: Identify relevant facts from the provided context, supported by evidence (e.g., URLs or source).
+            - Step 2: Deduce logical conclusions based on verified facts, step by step.
+            - Step 3: Continue until the query is fully resolved or limitations are identified.
+            - At each step, confirm the evidence and discard unverified assumptions.
 
-       Only if the query is *highly unrelated* to the university, respond with "매우 관련 없는 질문은 답변해드릴 수 없습니다."
-       If no source URL is available, add '출처 : https://www.yonsei.ac.kr/sc/support/notice.jsp' at the end with the note '추가 정보가 없어요. 해당 페이지를 참고해 주세요.' Otherwise, include the provided source URL only at the end of all responses, as '출처 : [url]'.
-       Respond in {language}.
-        """
-    },
-    {
-        "role": "user",
-        "content": f"Here is some background information with the source URLs provided:\n\n{context_text}\n\nBased on this information, could you help with the following question: {query}\n\nPlease make sure to include the relevant details and add the source URL only at the end of all responses."
-    }
-]
+            2. **Handle Unavailable Information**:
+            - If relevant information is not found in the context, state: 
+                "죄송합니다. 관련 정보를 찾을 수 없습니다."
+            - Do not speculate, fabricate, or infer beyond the given context.
 
-    # 메시지 구조 로깅
-    logging.info(f"LLM에 전달되는 메시지: {json.dumps(messages, ensure_ascii=False, indent=2)[:1000]}...")  # 너무 길 경우 일부만 로깅
+            ### RESPONSE GUIDELINES (FOR USER OUTPUT):
+            1. **Grounded in Evidence**:
+            - All responses must be based only on facts explicitly present in the provided context or URLs.
+            - Include source URLs for all claims, formatted as: "출처: [url]."
+            - Never include unsupported or speculative details.
 
-    try:
-        # OpenAI API 호출
-        api_start = time.perf_counter()
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",  # 올바른 모델 이름 사용
-            messages=messages,
-            max_tokens=500,  # 생성 토큰 수 제한
-            stream=True  # 스트리밍 활성화
-        )
-        api_end = time.perf_counter()
-        api_time = api_end - api_start
-        logging.info(f"OpenAI API 호출 시간: {api_time:.6f}초")
+            2. **Clarity and Relevance**:
+            - Provide concise and user-friendly answers tailored to the query.
+            - Avoid exposing internal reasoning steps like "Step 1," "Step 2" in the final response.
+            - Focus solely on the user's query without unnecessary details.
 
-        # 응답 포맷팅
-        collected_response = ""
-        # for chunk in response:
-        #     chunk_message = chunk.choices[0].delta.content
-        #     chunk_message = str(chunk_message)
-        #     collected_response += chunk_message
-        #     yield chunk_message  # 스트리밍 응답 반환
-        for chunk in response:
-            chunk_message = chunk.choices[0].delta.content
-            if chunk_message is None:
-                chunk_message = ''
-            chunk_message = str(chunk_message)
-            collected_response += chunk_message
-            yield chunk_message  # 스트리밍 응답 반환
+            3. **Polite and Professional Tone**:
+            - Use a friendly and professional tone.
+            - For Korean responses, use polite endings such as "요" or "입니다."
+
+            4. **Unavailable Information**:
+            - If the context lacks relevant information, clearly and politely state:
+                "죄송합니다. 제공된 문서에서 관련 정보를 찾을 수 없습니다."
+
+            ### CRITICAL RULES:
+            1. Responses must **strictly adhere** to the provided context or external sources.
+            2. Any speculative or fabricated information is prohibited.
+            3. All claims must be supported by explicit evidence from the context.
+            4. Final answers must not expose internal logical steps or irrelevant content.
+            5. Provides the user with a concise, accurate, and contextually appropriate answer.
+
+            ## INPUT FORMAT: 
+            --------------------
+            CONTEXT index : [
+            BEGIN OF CONTEXT index
+
+                [URL]
+                url
+
+                [TEXT]
+                text
+
+                [TABLES]
+                tables
+
+            END OF CONTEXT index
+            ]
+            --------------------
+
+            ### FINAL OUTPUT:
+            - Respond in {language} and date as {language} format (e.g. 02 FEB -> 2월).
+            - Ensure all claims are grounded in factual evidence, and address the user's query clearly and concisely.
+            - Don't use ** for important information.
+            - You must retrieve the URL specified in the CONTEXT index for use in the response.
+
+            ### RESPONSE FORMAT:
+            [Your detailed and concise answer here. - Don't use ** for important information.]
+            [\n]
+            출처: [url]
+            """ 
 
 
-    except Exception as e:
-        logging.error(f"응답 생성 중 오류 발생: {str(e)}")
-        error_message = "죄송합니다. 응답을 생성하는 동안 오류가 발생했습니다. 다시 시도해 주세요." if language == 'ko' else "I'm sorry, an error occurred while generating the response. Please try again."
-        yield error_message
-        return
+        #logger.info("시스템 프롬프트 설정 완료")
+        #logger.debug(f"시스템 프롬프트 플: {system_prompt[:200]}...")
 
-def create_context_text(context: List[dict], max_length: int = 10000) -> str:
-    logging.info("컨텍스트 텍스트 생성 시작.")
-    context_text = ""
-    for doc in context:
-        text = doc.get('merged_text', 'N/A')
-        tables = doc.get('tables', 'N/A')
-        doc_text = f"URL: {doc.get('url', 'Unknown URL')}\nText: {text}\nTables: {tables}\n"
-        if len(context_text) + len(doc_text) > max_length:
-            logging.info(f"문서 길이 : { len(context_text) + len(doc_text)}")
-            remaining_length = max_length - len(context_text)
-            if remaining_length > 0:
-                truncated_doc_text = doc_text[:remaining_length]
-                context_text += truncated_doc_text
-                logging.info(f"문서 {doc.get('url', 'Unknown URL')} 일부를 잘라서 추가했습니다.")
-            break
-        context_text += doc_text
-        # 개별 문서 텍스트 로깅 추가
-        logging.info(f"추가된 문서: {doc_text[:100]}...")  # 전체 텍스트 대신 일부만 로깅
-    logging.info("컨텍스트 텍스트 생성 완료.")
-    logging.info(f"생성된 컨텍스트 텍스트 길이: {len(context_text)}")
-    logging.info(f"생성된 컨텍스트 텍스트 내용: {context_text[:500]}...")  # 필요 시 일부만 로깅
-    return context_text
+        # 이전 대화 컨텍스트 구성
+        conversation_context = ""
+        if conversation_manager.query_history:
+            recent_history = conversation_manager.query_history[-2:]  # 최근 2개 대화
+            if len(recent_history) >= 2:
+                conversation_context = f"""Previous Q1: {recent_history[-2]['original_query']}
+    Previous A1: {recent_history[-2]['response']}
+    Previous Q2: {recent_history[-1]['original_query']}
+    Previous A2: {recent_history[-1]['response']}
+    """
+            elif len(recent_history) == 1:
+                conversation_context = f"""Previous Q1: {recent_history[0]['original_query']}
+    Previous A1: {recent_history[0]['response']}
+    """
+        logger.info(f"\n이전 대화 : {conversation_context}\n")
 
-def detect_language(text: str) -> str:
-    lang, _ = langid.classify(text)
-    logging.info(f"감지된 언어: {lang}")
-    return lang
+        # 메시지 구성
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": f"""
+            Previous conversation: 
+             
+                {conversation_context}
+            Background information: 
+                {context}
 
-def chat_placeholder(client: OpenAI, index: faiss.Index, metadata: Dict, id_to_url: Dict, url_to_id: Dict, bm25: BM25Okapi, tokenizer: Okt, query: str, search_method: str, top_k_faiss: int = 5, bm25_top_k: int = 200, faiss_top_k: int = 5):
-    try:
-        overall_start = time.perf_counter()
-        logging.info(f"새로운 쿼리 수신: {query}")
+            CURRENT QUERY:
+            Original user query: {original_query}
+            Rewritten query for context: {rewritten_query}
 
-        # 언어 감지
-        lang_start = time.perf_counter()
-        lang = detect_language(query)
-        lang_end = time.perf_counter()
-        lang_time = lang_end - lang_start
-        logging.info(f"언어 감지 완료: {lang} (시간: {lang_time:.6f}초)")
+            - Respond in {language} and date as {language} personal format (e.g. if korean, 02 FEB -> 2월).
+            - If the query is about '학부' or '학부대학', default to '학부' or '학부대학' by default.
+        """}
+        ]
+        
+        logger.info("메시지 구성 완료")
+        # logger.debug(f"최종 사용자 메시지 샘플: 쿼리 : {rewritten_query} \n 컨텍스트 : {messages[1]['content'][:200]}...")
 
-        context = []
-        timings = {}
-        if search_method == 'ISAAC 2.0 - 정확하고 자세한 정보검색':
-            # FAISS만 사용
-            faiss_start = time.perf_counter()
-            faiss_result = search_faiss(client, index, metadata, id_to_url, query, top_k=top_k_faiss)
-            faiss_end = time.perf_counter()
-            faiss_time = faiss_end - faiss_start
-            timings['faiss_time'] = faiss_time
-            logging.info(f"FAISS 검색 시간: {faiss_time:.6f}초")
-            context = [result["metadata"] for result in faiss_result["results"]]
-            logging.info("FAISS 검색 결과를 사용하여 응답을 생성합니다.")
-        elif search_method == 'ISAAC 2.0-turbo : 하이브리드형 검색':
-            # BM25 + FAISS 사용
-            bm25_faiss_start = time.perf_counter()
-            bm25_faiss_result = search_bm25_faiss(client, bm25, metadata, id_to_url, tokenizer, query, bm25_top_k=bm25_top_k, faiss_top_k=faiss_top_k)
-            bm25_faiss_end = time.perf_counter()
-            bm25_faiss_time = bm25_faiss_end - bm25_faiss_start
-            timings['bm25_faiss_time'] = bm25_faiss_time
-            logging.info(f"BM25 + FAISS 검색 시간: {bm25_faiss_time:.6f}초")
-            context = [result["metadata"] for result in bm25_faiss_result["results"]]
-            logging.info("BM25 + FAISS 검색 결과를 사용하여 응답을 생성합니다.")
-        elif search_method == 'ISAAC Lite : 가볍고 빠른 검색':
-            # BM25만 사용
-            bm25_start = time.perf_counter()
-            bm25_result = search_bm25(bm25, metadata, id_to_url, tokenizer, query, top_k=5)
-            bm25_end = time.perf_counter()
-            bm25_time = bm25_end - bm25_start
-            timings['bm25_time'] = bm25_time
-            logging.info(f"BM25 검색 시간: {bm25_time:.6f}초")
-            context = [result["metadata"] for result in bm25_result["results"]]
-            logging.info("BM25 검색 결과를 사용하여 응답을 생성합니다.")
-        else:
-            logging.error(f"알 수 없는 검색 방법: {search_method}")
-            error_message = "죄송합니다. 내부 오류가 발생했습니다." if lang == 'ko' else "I'm sorry, an internal error occurred."
-            yield error_message
+        try:
+            # API 호출 시작
+            api_start = time.perf_counter()
+
+            logger.info("OpenAI API 호출 시작")
+            
+            response = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=messages,
+                max_tokens=500,
+                stream=True,
+                temperature=0.1,
+                top_p=0.9, 
+                frequency_penalty=0.2, 
+                presence_penalty=0.1
+            )
+
+            print(response)
+            
+            api_end = time.perf_counter()
+            api_time = api_end - api_start
+            logger.info(f"OpenAI API 초기 응답 수신 (시간: {api_time:.6f}초)")
+
+            # 스트리밍 응답 처리
+            collected_response = ""
+            chunk_count = 0
+            for chunk in response:
+                chunk_message = chunk.choices[0].delta.content
+                if chunk_message is None:
+                    chunk_message = ''
+                chunk_message = str(chunk_message)
+                collected_response += chunk_message
+                chunk_count += 1
+                
+                if chunk_count % 10 == 0:  # 10개 청크마다 로깅
+                    logger.debug(f"청크 {chunk_count} 처리 중... 현재 응답 길이: {len(collected_response)}")
+                
+                yield chunk_message
+
+            # 응답 완료 후 응답 처리
+            first_sentence = collected_response.split('.')[0]
+            summary = collected_response[:100] + "..." if len(collected_response) > 100 else collected_response
+            
+            logger.info(f"=== 응답 처리 결과 ===")
+            #logger.info(f"첫 문장: {first_sentence}")
+            #logger.info(f"요약: {summary}")
+            
+            # 응답 메타데이터 반환
+            response_metadata = {
+                "query": rewritten_query,
+                "response": collected_response,
+                "first_sentence": first_sentence,
+                "summary": summary,
+                "timestamp": time.time()
+            }
+            
+            # conversation.py로 전달하기 위한 메타데이터 로깅
+            # logger.info(f"응답 메타데이터 생성 완료: {json.dumps(response_metadata, ensure_ascii=False)}")
+        
+        except Exception as e:
+            logger.error(f"응답 생성 중 오류 발생: {str(e)}", exc_info=True)
+            yield "죄송합니다. 응답을 생성하는 동안 오류가 발생했습니다."
             return
 
-        # OpenAI를 사용하여 응답 생성
-        response_start = time.perf_counter()
-        response_generator = generate_response_with_context(client, query, context, lang)
-        response_end = time.perf_counter()
-        response_time = response_end - response_start
-        timings['response_time'] = response_time
-        logging.info(f"응답 생성 및 포맷팅 시간: {response_time:.6f}초")
 
-        overall_end = time.perf_counter()
-        total_time = overall_end - overall_start
-        timings['total_time'] = total_time
-        logging.info(f"전체 쿼리 처리 시간: {total_time:.6f}초")
-
-        for chunk in response_generator:
-            yield chunk
-
-    except Exception as e:
-        logging.error(f"오류가 발생했습니다: {str(e)}")
-        error_message = "죄송합니다. 오류가 발생했습니다. 다시 시도해주세요." if 'lang' in locals() and lang == 'ko' else "I'm sorry, an error occurred. Please try again."
-        yield error_message
-        return
+def detect_language(text: str, logger=None) -> str:
+    lang, _ = langid.classify(text)
+    logger.info(f"감지된 언어: {lang}")
+    return lang

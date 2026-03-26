@@ -1,0 +1,12 @@
+2025-02-20 12:10:28,261:INFO:[세션 g0q3pvlqegj-ip hash:12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36] 
+ 사용자 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:10:28,262:INFO:선택된 검색 방법: ISAAC Basic - 균형 잡힌 검색
+2025-02-20 12:10:31,200:INFO:감지된 언어: ko
+2025-02-20 12:10:31,201:INFO:새로운 쿼리 수신: 2025-1 학부 등록금 납부 일정 (언어: ko)
+2025-02-20 12:10:31,203:INFO:쿼리 상태 확인 완료
+2025-02-20 12:10:31,204:INFO:=== 병렬 쿼리 처리 시작 ===
+2025-02-20 12:10:31,204:INFO:=== Query Rewrite Process Started ===
+2025-02-20 12:10:31,205:INFO:Current Query: 2025-1 학부 등록금 납부 일정
+2025-02-20 12:10:31,205:INFO:Query History Count: 0
+2025-02-20 12:10:31,205:INFO:=== 주제어 추출 시작 ===
+2025-02-20 12:10:31,230:INFO:Query '2025-1 학부 등록금 납부 일정' already exists in the embeddings file.

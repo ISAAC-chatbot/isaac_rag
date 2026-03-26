@@ -1,0 +1,42 @@
+2025-02-20 16:24:47,859:INFO:[세션 adxuh9750qj-ip hash:12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36] 
+ 사용자 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 16:24:47,862:INFO:선택된 검색 방법: ISAAC Basic - 균형 잡힌 검색
+2025-02-20 16:24:49,873:INFO:감지된 언어: ko
+2025-02-20 16:24:49,873:INFO:새로운 쿼리 수신: 2025-1 학부 등록금 납부 일정 (언어: ko)
+2025-02-20 16:24:49,875:INFO:쿼리 상태 확인 완료
+2025-02-20 16:24:49,876:INFO:=== 병렬 쿼리 처리 시작 ===
+2025-02-20 16:24:49,876:INFO:=== 주제어 추출 시작 ===
+2025-02-20 16:24:49,876:INFO:분석할 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 16:24:49,877:INFO:매칭되는 키워드가 없습니다. 빈 토픽으로 즉시 반환합니다.
+2025-02-20 16:24:49,877:INFO:=== Query Rewrite Process Started ===
+2025-02-20 16:24:49,877:INFO:Current Query: 2025-1 학부 등록금 납부 일정
+2025-02-20 16:24:49,877:INFO:Query History Count: 0
+2025-02-20 16:24:49,882:INFO:Query '2025-1 학부 등록금 납부 일정' already exists in the embeddings file.
+2025-02-20 16:24:49,883:INFO:병렬 처리 완료 - 최종 토픽: []
+2025-02-20 16:24:49,885:INFO:=== 병렬 문서 검색 시작 ===
+2025-02-20 16:24:49,885:INFO:검색 상태 - needs_notice_search: False, topics: []
+2025-02-20 16:24:49,885:INFO:=== 문서 검색 시작 ===
+2025-02-20 16:24:49,890:INFO:Query '2025-1 학부 등록금 납부 일정' already exists in the embeddings file.
+2025-02-20 16:24:49,891:INFO:공지사항 검색 건너뜀 (topics 없음)
+2025-02-20 16:24:49,913:INFO:
+ 
+ response : <Response [400]>
+2025-02-20 16:24:49,914:ERROR:검색 실패: 400 - {"error":{"root_cause":[{"type":"query_shard_exception","reason":"failed to create query: Field 'vector' is not knn_vector type.","index":"notice","index_uuid":"xc-CEN43SzOtezvWLf7pFA"}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"notice","node":"QrB_NjjkSI-2MIUn8LM-CA","reason":{"type":"query_shard_exception","reason":"failed to create query: Field 'vector' is not knn_vector type.","index":"notice","index_uuid":"xc-CEN43SzOtezvWLf7pFA","caused_by":{"type":"illegal_argument_exception","reason":"Field 'vector' is not knn_vector type."}}}]},"status":400}
+2025-02-20 16:24:49,914:INFO:검색된 총 문서 수: 0 (공지사항: 0, 일반문서: 0)
+2025-02-20 16:24:49,915:INFO:AI를 위한 컨텍스트 텍스트 생성 시작.
+2025-02-20 16:24:49,915:INFO:컨텍스트 텍스트 생성 완료.
+2025-02-20 16:24:49,915:INFO:생성된 컨텍스트 텍스트 내용: ...
+
+2025-02-20 16:24:49,916:INFO:=== 가상 응답 생성 노드 도달 ===
+2025-02-20 16:24:49,917:INFO:=== 응답 생성 시작 ===
+2025-02-20 16:24:49,917:INFO:입력 쿼리: 2025-1 학부 등록금 납부 일정
+2025-02-20 16:24:49,917:INFO:입력 컨텍스트: 
+2025-02-20 16:24:49,918:WARNING:컨텍스트가 비어있어 기본 응답을 반환합니다.
+2025-02-20 16:24:49,919:INFO:대화 #1 기록됨:
+{
+  "id": 1,
+  "original_query": "2025-1 학부 등록금 납부 일정",
+  "rewritten_query": "2025-1 학부 등록금 납부 일정",
+  "response": "죄송합니다. 관련된 정보를 찾을 수 없습니다. 다른 질문을 해주시겠어요?",
+  "timestamp": 1740068689.9190233
+}

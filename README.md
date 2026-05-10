@@ -73,12 +73,11 @@ OPENSEARCH_NOTICE_INDEX=
 - 응답: `text/event-stream`
 - 주요 이벤트: `MESSAGE`, `URL`, `CHAT_ROOM_INFO`, `ELAPSED_TIME`
 
-## 자료
+## 링크
 
-- [Instagram](https://www.instagram.com/issac.ai_/)
-- [YouTube](https://www.youtube.com/watch?v=UNe11yl9OFo)
-- [Google Play에서 ISAAC 보기](https://play.google.com/store/apps/details?id=com.isaacai)
-- [App Store에서 아이작 보기](https://apps.apple.com/kr/app/%EC%95%84%EC%9D%B4%EC%9E%91-%EB%82%98%EB%A7%8C%EC%9D%98-ai%EC%A1%B0%EA%B5%90/id6741763684)
+| 인스타그램 | Demo 영상 | Google Play | 아이작 앱스토어 |
+| --- | --- | --- | --- |
+| <a href="https://www.instagram.com/issac.ai_/"><img src="image/sns/insta.svg" width="64" alt="인스타그램"></a> | <a href="https://www.youtube.com/watch?v=UNe11yl9OFo"><img src="image/sns/youtube.svg" width="78" alt="Demo 영상"></a> | <a href="https://play.google.com/store/apps/details?id=com.isaacai"><img src="image/sns/googleplay.png" width="64" alt="Google Play"></a> | <a href="https://apps.apple.com/kr/app/%EC%95%84%EC%9D%B4%EC%9E%91-%EB%82%98%EB%A7%8C%EC%9D%98-ai%EC%A1%B0%EA%B5%90/id6741763684"><img src="image/sns/appstore.png" width="64" alt="아이작 앱스토어"></a> |
 
 ## IR
 
